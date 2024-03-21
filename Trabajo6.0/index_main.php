@@ -39,7 +39,7 @@ if (isset($_SESSION['usuario_nombre'])) {
 <body>
     <!-- Encabezado de la página -->
     <header>
-        <h1 class="titulo">DOGINN <span>Boooo</span></h1>
+        <h1 class="titulo">DOGINN <span>Booking</span></h1>
        
     </header>
     <div class="usuario-info">
