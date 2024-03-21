@@ -1,0 +1,376 @@
+/* Definición de variables de color */
+:root {
+    --blanco: #ffffff;          /* Color blanco */
+    --oscuro: #212121;          /* Color oscuro (gris/negro) */
+    --primario: #FFC107;        /* Color primario (amarillo) */
+    --secundario: #0097A7;      /* Color secundario (azul) */
+    --gris: #757575;            /* Color gris */
+    --grisClaro: #DFE9F3;       /* Color gris claro */
+}
+
+/* Estilos globales y de normalización */
+html {
+    font-size: 62.5%;            /* Establece un tamaño de fuente base para facilitar los cálculos (1rem = 10px) */
+    box-sizing: border-box;       /* Corrige el modelo de caja para incluir el relleno y el borde en el ancho y alto */
+    scroll-snap-type: y mandatory; /* Configuración de desplazamiento suave en el eje y */
+}
+
+/* Estilos para elementos con scroll snap */
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;    /* Alinea al centro durante el desplazamiento suave */
+    scroll-snap-stop: always;     /* Detiene el desplazamiento suave en cada elemento */
+}
+
+/* Herencia del modelo de caja */
+*, *:before, *:after {
+    box-sizing: inherit;          /* Hereda el modelo de caja de la propiedad 'html' */
+}
+
+/* Estilos del cuerpo del documento */
+body {
+    font-size: 16px;              /* Establece el tamaño de fuente base para el cuerpo del documento */
+    font-family: 'Krub', sans-serif; /* Establece la fuente principal del texto */
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% ); /* Fondo con degradado */
+}
+
+/* Estilos del contenedor principal */
+.contenedor {
+    max-width: 120rem;            /* Ancho máximo del contenedor */
+    margin: 0 auto;               /* Centra el contenedor en la página */
+}
+
+/* Estilos para texto en modo oscuro */
+.reg {
+    color: #ffffff;               /* Texto en modo oscuro */
+}
+
+/* Estilos para botones */
+.boton {
+    /* Estilos generales para botones */
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;              /* Ancho automático para pantallas más grandes */
+    }
+}
+
+.boton:hover {
+    cursor: pointer;              /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilos para caja con sombra */
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48); /* Sombra */
+    background-color: var(--blanco);  /* Fondo blanco */
+    padding: 2rem;
+    border-radius: 1rem;         /* Bordes redondeados */
+}
+
+/* Estilos de tipografía */
+h1 {
+    font-size: 3.8rem;            /* Tamaño de fuente para encabezados de nivel 1 */
+}
+
+h2 {
+    font-size: 2.8rem;            /* Tamaño de fuente para encabezados de nivel 2 */
+}
+
+h3 {
+    font-size: 1.8rem;            /* Tamaño de fuente para encabezados de nivel 3 */
+}
+
+h1, h2, h3 {
+    text-align: center;           /* Alineación centrada para encabezados */
+}
+
+/* Estilos para títulos especiales */
+.titulo span {
+    font-size: 2rem;              /* Tamaño de fuente para títulos especiales */
+}
+
+/* Utilidades para anchos */
+.w-sm-100 {
+    width: 100%;                  /* Ancho del 100% */
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;              /* Ancho automático para pantallas más grandes */
+    }
+}
+
+/* Utilidades flexibles */
+.flex {
+    display: flex;                /* Habilita el modelo flexible en los elementos */
+}
+
+/* Alineación a la derecha */
+.alinear-derecha {
+    justify-content: flex-end;    /* Justifica el contenido a la derecha */
+}
+
+/* Estilos para la barra de navegación principal */
+.nav-bg {
+    background-color: var(--secundario); /* Fondo*/
+}
+
+/* Navegacion Principal */
+/* Estilos para la navegación principal */
+.navegacion-principal {
+    display: flex;              /* Establece el contenedor de navegación como un contenedor flexible */
+    flex-direction: column;     /* Alinea los elementos de la navegación en columna por defecto en pantallas pequeñas */
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;     /* Cambia a una disposición en fila cuando el ancho de la pantalla es igual o mayor a 768px */
+        justify-content: space-between;  /* Distribuye uniformemente los elementos a lo largo del eje principal (horizontal) */
+    }
+}
+
+/* Estilos para los enlaces dentro de la navegación principal */
+.navegacion-principal a {
+    display: block;             /* Hace que los enlaces ocupen todo el ancho del contenedor */
+    text-align: center;         /* Centra el texto dentro de los enlaces */
+    color: var(--blanco);       /* Establece el color del texto usando una variable CSS personalizada */
+    text-decoration: none;      /* Elimina el subrayado predeterminado de los enlaces */
+    font-size: 2rem;            /* Tamaño de fuente de 2rem */
+    font-weight: 700;           /* Establece la negrita */
+    padding: 1rem;              /* Agrega relleno alrededor del texto dentro de los enlaces */
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);  /* Cambia el fondo al color primario cuando el mouse está sobre los enlaces */
+    color: var(--oscuro);               /* Cambia el color del texto al oscuro cuando el mouse está sobre los enlaces */
+}
+
+/* Estilos para la sección Hero */
+.hero {
+    background-image: url(../img/perros.png);  /* Establece una imagen de fondo para la sección Hero */
+    background-repeat: no-repeat;              /* Evita que la imagen de fondo se repita */
+    background-size: cover;                    /* Ajusta la imagen de fondo para cubrir completamente el contenedor */
+    height: 450px;                            /* Altura fija para la sección Hero */
+    position: relative;                       /* Permite posicionar elementos secundarios de forma relativa */
+    margin-bottom: 2rem;                      /* Agrega margen en la parte inferior de la sección Hero */
+}
+
+/* Estilos para el contenido dentro de la sección Hero */
+.contenido-hero {
+    position: absolute;                       /* Permite posicionar el contenido de forma absoluta con respecto al contenedor principal */
+    background-color: rgba(0, 0, 0, 0.7);     /* Fondo semi-transparente oscuro */
+    width: 100%;                             /* Ocupa todo el ancho del contenedor */
+    height: 100%;                            /* Ocupa toda la altura del contenedor */
+    display: flex;                           /* Hace que el contenido sea un contenedor flexible */
+    flex-direction: column;                  /* Alinea los elementos en columna */
+    align-items: center;                     /* Centra los elementos horizontalmente */
+    justify-content: center;                 /* Centra los elementos verticalmente */
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);                    /* Establece el color del texto dentro del contenido a blanco */
+}
+
+.contenido-hero .ubicacion {
+    display: flex;                           /* Hace que la ubicación sea un contenedor flexible */
+    align-items: flex-end;                   /* Alinea los elementos al final del eje transversal (abajo) */
+}
+
+/* Estilos para la sección de Servicios */
+.servicios {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Cambiado de center a stretch para que se estiren verticalmente */
+}
+
+.servicio {
+    flex-basis: calc(33.333% - 2rem); /* Usa flex-basis para dar a cada servicio un tercio del espacio disponible, restando el margen */
+    margin: 0 1rem; /* Ajusta según sea necesario, pero asegúrate de que el total de los márgenes no sea mayor que el espacio disponible */
+}
+
+@media (max-width: 768px) {
+    .servicios {
+        flex-direction: column;
+    }
+
+    .servicio {
+        flex-basis: auto; /* En pantallas pequeñas, resetea flex-basis para que tome el ancho completo */
+        margin: 1rem 0; /* Ajusta el margen para pantallas más pequeñas */
+    }
+}
+
+/* Estilos para cada servicio dentro de la sección de Servicios */
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.servicio h3 {
+    color: var(--secundario);                /* Establece el color del título del servicio utilizando la variable secundaria */
+    font-weight: normal;                     /* Establece el peso normal del texto */
+}
+
+
+.servicio p {
+    line-height: 2;                         /* Altura de línea de 2, proporciona espacio entre líneas en el texto */
+    text-align: center;                     /* Centra el texto dentro de cada servicio */
+}
+
+
+.servicio .iconos {
+    height: 15rem;                          /* Altura fija para la sección de iconos */
+    width: 15rem;                           /* Ancho fijo para la sección de iconos */
+    background-color: var(--primario);      /* Establece el color de fondo utilizando la variable primaria */
+    border-radius: 50%;                     /* Borde redondeado para crear una forma circular */
+    display: flex;                          /* Hace que la sección de iconos sea un contenedor flexible */
+    justify-content: space-evenly;          /* Distribuye uniformemente los elementos a lo largo del eje principal (horizontal) */
+    align-items: center;                    /* Centra los elementos verticalmente dentro de la sección de iconos */
+}
+
+
+/** Contacto **/
+/* Estilos para el formulario */
+.formulario {
+    background-color: var(--gris);       /* Color de fondo del formulario usando una variable CSS personalizada */
+    width: min(60rem, 100%);             /* Establece el ancho del formulario al mínimo entre 60rem y el 100% del ancho del contenedor padre */
+    margin: 0 auto;                      /* Centra el formulario horizontalmente en el contenedor padre */
+    padding: 2rem;                       /* Agrega relleno alrededor del contenido del formulario */
+    border-radius: 1rem;                 /* Agrega bordes redondeados al formulario */
+}
+
+/* Estilos para el fieldset dentro del formulario */
+.formulario fieldset {
+    border: none;                        /* Elimina el borde del fieldset */
+}
+
+/* Estilos para la leyenda dentro del formulario */
+.formulario legend {
+    text-align: center;                  /* Centra el texto de la leyenda en el formulario */
+    font-size: 1.8rem;                   /* Tamaño de fuente de la leyenda */
+    text-transform: uppercase;           /* Convierte el texto de la leyenda a mayúsculas */
+    font-weight: 700;                    /* Establece la negrita para la leyenda */
+    margin-bottom: 2rem;                 /* Agrega margen en la parte inferior de la leyenda */
+    color: var(--primario);              /* Establece el color del texto de la leyenda utilizando una variable personalizada */
+}
+
+/* Estilos específicos para pantallas más grandes (más de 768px de ancho) */
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;                    /* Hace que el contenedor de campos sea un contenedor de cuadrícula */
+        grid-template-columns: 50% 50%;   /* Divide el contenedor de campos en dos columnas de igual tamaño */
+        grid-template-rows: auto auto 20rem;  /* Define las filas del contenedor de campos con alturas automáticas, excepto la última que tiene una altura fija de 20rem */
+        column-gap: 1rem;                 /* Espaciado entre columnas */
+    }
+
+    /* Estilos específicos para ciertos campos dentro del contenedor de campos */
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3;               /* Ocupa dos columnas en el contenedor de campos */
+    }
+}
+
+/* Estilos generales para cada campo dentro del formulario */
+.campo {
+    margin-bottom: 1rem;                 /* Agrega margen en la parte inferior de cada campo */
+}
+
+/* Estilos para las etiquetas de los campos dentro del formulario */
+.campo label {
+    color: var(--blanco);                /* Establece el color del texto de la etiqueta utilizando una variable personalizada */
+    font-weight: bold;                   /* Establece la negrita para el texto de la etiqueta */
+    margin-bottom: .5rem;                /* Agrega margen en la parte inferior de cada etiqueta */
+    display: block;                      /* Hace que cada etiqueta sea un bloque para que ocupe toda la anchura disponible */
+}
+
+/* Estilos específicos para el campo textarea dentro del formulario */
+.campo textarea {
+    height: 20rem;                       /* Altura fija para el campo de textarea */
+}
+
+/* Estilos para los campos de entrada de texto dentro del formulario */
+.input-text {
+    width: 100%;                         /* Ocupa todo el ancho disponible dentro de su contenedor */
+    border: none;                        /* Elimina el borde del campo de entrada de texto */
+    padding: 1.5rem;                     /* Agrega relleno alrededor del contenido del campo de entrada de texto */
+    border-radius: .5rem;                /* Agrega bordes redondeados al campo de entrada de texto */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    text-align: center;                  /* Centra el texto en el pie de página */
+}
+
+.nav-bg {
+    position: relative; /* Establece tu barra de navegación como referencia para posicionar absolutamente el botón de cerrar sesión */
+    /* ... otros estilos de tu barra de navegación ... */
+}
+
+/* Estilos para el botón de cierre de sesión */
+.boton-cerrar-sesion {
+    position: absolute;
+    top: 20px; /* Ajusta este valor según sea necesario */
+    right: 20px; /* Ajusta este valor según sea necesario */
+    padding: 10px 20px;
+    background-color: #f44336; /* o cualquier otro color que prefieras */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    /* ... otros estilos que desees aplicar ... */
+}
+
+/* Asegúrate de que la navegación principal esté distribuida de forma adecuada para dejar espacio para el botón de cerrar sesión */
+.navegacion-principal {
+    display: flex;
+    justify-content: space-between; /* Esto reparte los elementos de navegación y deja espacio al final */
+    align-items: center;
+    /* ... otros estilos de tu navegación ... */
+}
+/* Estilos para mejorar la apariencia del saludo y el botón de cierre de sesión */
+.usuario-info {
+    display: flex; /* Usamos flexbox para un mejor control del layout */
+    flex-direction: column; /* Apilamos los elementos verticalmente */
+    align-items: flex-end; /* Alineamos los elementos al final del contenedor (derecha) */
+    position: absolute; /* Posicionamiento absoluto respecto a su contenedor relativo */
+    top: 10px; /* Distancia desde la parte superior de la barra de navegación */
+    right: 20px; /* Distancia desde la parte derecha de la barra de navegación */
+    text-align: right; /* Alineación del texto a la derecha */
+}
+
+.saludo-usuario {
+    color: var(--blanco); /* Color del texto para el saludo */
+    font-size: 2rem; /* Tamaño del texto para el saludo */
+    font-weight: bold; /* Hacemos el texto del saludo en negrita */
+    margin-bottom: 0.5rem; /* Espacio entre el saludo y el botón de cerrar sesión */
+}
+
+.boton-cerrar-sesion {
+    background-color: #f44336; /* Fondo rojo para el botón cerrar sesión */
+    color: var(--blanco); /* Color del texto para el botón cerrar sesión */
+    padding: 10px 20px; /* Espaciado interno para el botón cerrar sesión */
+    text-decoration: none; /* Removemos el subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados para el botón cerrar sesión */
+    font-size: 1.6rem; /* Tamaño de texto para el botón cerrar sesión */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+.boton-cerrar-sesion:hover {
+    background-color: #d32f2f; /* Color de fondo más oscuro al pasar el mouse por encima */
+}
