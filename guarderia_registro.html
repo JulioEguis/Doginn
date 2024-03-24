@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Guardería</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+    <div class="contenedor-central"> 
+        <h2 class="titulo-formulario">Gracias por ser parte de DOGINN, unete a a la primera web de reservas de guarderías caninas</h2>
+        <form class="formulario-registro" action="guarderia_registro_be.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre_guarderia" required>
+        
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+        
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+        
+            <input type="submit" value="Registrar Guardería">
+        </form>
+      
+    </div>
+</body>
+</html>
