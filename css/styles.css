@@ -7,6 +7,13 @@
     --gris: #757575;            /* Color gris */
     --grisClaro: #DFE9F3;       /* Color gris claro */
 }
+/*estilos del menu despeglable*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 /* Estilos globales y de normalización */
 html {
@@ -374,3 +381,4 @@ h1, h2, h3 {
 .boton-cerrar-sesion:hover {
     background-color: #d32f2f; /* Color de fondo más oscuro al pasar el mouse por encima */
 }
+

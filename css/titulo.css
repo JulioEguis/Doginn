@@ -1,0 +1,17 @@
+.titulo {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 8rem;
+    padding: 2rem;
+    transition: transform 0.5s ease; /* Transición suave para el efecto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    color: rgb(59, 59, 211); /* Cambia el color del texto */
+  }
+
+  /* Estilo para el efecto de hover */
+  .titulo:hover {
+    transform: scale(1.3); /* Escala el título al pasar el cursor por encima */
+  }
+  .titulo span {
+    color: rgb(8, 0, 0); /* Cambia el color del texto dentro del span */
+  }
