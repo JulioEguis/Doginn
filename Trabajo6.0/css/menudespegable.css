@@ -1,0 +1,27 @@
+/* Estilos del título */
+.titulo {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 0 auto; /* Establece márgenes automáticos a izquierda y derecha para centrar el elemento */
+}
+
+/* Resto de los estilos (copiados de la respuesta anterior) */
+header {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px; /* Ajusta el espaciado */
+}
+
+.menu-btn {
+    margin-left: 10px; /* Añade un margen entre los botones del menú */
+}
+
+.menu-desplegable {
+    display: none; /* Oculta el menú desplegable por defecto */
+}
+
+.menu-desplegable.activo {
+    display: block; /* Muestra el menú desplegable cuando está activo */
+}
+
+

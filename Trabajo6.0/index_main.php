@@ -21,27 +21,38 @@ if (isset($_SESSION['usuario_nombre'])) {
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Precarga la hoja de estilos normalize.css -->
     <link rel="preload" href="css/normalize.css" as="style">
-    <!-- Enlaza la hoja de estilos normalize.css -->
     <link rel="stylesheet" href="css/normalize.css">
-    <!-- Enlaza a la fuente de Google y precarga la hoja de estilos styles.css -->
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preload" href="css/styles.css" as="style">
     <!-- Enlaza la hoja de estilos styles.css -->
     <link href="css/styles.css" rel="stylesheet">
-    <!-- Precarga y enlaza las hojas de estilos login.css -->
     <link rel="preload" href="css/login.css" as="style">
     <link rel="stylesheet" href="css/login.css">
     <link rel="preload" href="css/cerrar_sesion.css" as="style">
     <link rel="stylesheet" href="css/cerrar_sesion.css">
+    <link rel="stylesheet" href="css/menudespegable.css">
+    
 </head>
 <body>
     <!-- Encabezado de la página -->
     <header>
-        <h1 class="titulo">DOGINN <span>Booking</span></h1>
-       
-    </header>
+    <h1 class="titulo">DOGINN <span>Booking</span></h1>
+    <img id="menu-usuario-btn" class="menu-btn" src="img/usuario.svg" alt="Usuario" style="width: 35px; height: 35px;">
+    <img id="menu-lineas-btn" class="menu-btn" src="img/lineas.svg" alt="Líneas" style="width: 35px; height: 35px;">
+  
+    <div id="menu-desplegable" class="menu-desplegable">
+        <nav>
+            <ul>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+                <li><a href="registro.php">Regístrate</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
     <div class="usuario-info">
         <!-- Imprime el saludo de usuario -->
         <?php if ($saludo !== ""): ?>
@@ -186,5 +197,8 @@ if (isset($_SESSION['usuario_nombre'])) {
     <footer class="footer">
         <p>Todos los derechos reservados. Sergio y Julio</p>
     </footer>
+    <script src="js/despegable.js"></script>
+
+
 </body>
 </html>
