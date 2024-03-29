@@ -6,6 +6,7 @@
     transition: transform 0.5s ease; /* Transición suave para el efecto */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
     color: rgb(59, 59, 211); /* Cambia el color del texto */
+    text-decoration: none;
   }
 
   /* Estilo para el efecto de hover */

@@ -88,7 +88,7 @@ if (isset($_SESSION['usuario_nombre'])) {
                 <p>Madrid</p>
             </div>
             <!-- Botones para iniciar sesión y registrarse solo se muestran si el usuario no ha iniciado sesión -->
-            <a class="boton" href="login.php">Inicia Sesión</a>
+          <!--   <a class="boton" href="login.php">Inicia Sesión</a>
             <p></p>
             <a class="boton" href="registro.php">Regístrate</a>
         <?php endif; ?>

@@ -1,27 +1,43 @@
 /* Estilos del título */
 .titulo {
-    text-align: center; /* Centra el texto horizontalmente */
-    margin: 0 auto; /* Establece márgenes automáticos a izquierda y derecha para centrar el elemento */
+    text-align: center; 
+    margin: 0 auto; 
+    text-decoration: none;
 }
 
-/* Resto de los estilos (copiados de la respuesta anterior) */
+
 header {
     display: flex;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 10px; /* Ajusta el espaciado */
+    justify-content: flex-end; 
+    align-items: center; 
+    padding: 10px; 
+    text-decoration: none;
 }
 
 .menu-btn {
-    margin-left: 10px; /* Añade un margen entre los botones del menú */
+    margin-left: 10px; 
+    text-decoration: none;
 }
 
 .menu-desplegable {
-    display: none; /* Oculta el menú desplegable por defecto */
+    display: none; 
+    text-decoration: none;
 }
 
 .menu-desplegable.activo {
-    display: block; /* Muestra el menú desplegable cuando está activo */
+    display: block; 
+    text-decoration: none;
+    
+}
+/* Estilos para los enlaces dentro del menú desplegable */
+.menu-desplegable a {
+    text-decoration: none; /* Elimina el subrayado de todos los enlaces dentro del menú desplegable */
+}
+
+/* Estilos para los enlaces "Iniciar Sesión" y "Registrarse" dentro del menú desplegable */
+.menu-desplegable a[href="login.php"],
+.menu-desplegable a[href="registro.php"] {
+    text-decoration: none; /* Elimina el subrayado específicamente para los enlaces "Iniciar Sesión" y "Registrarse" */
 }
 
 

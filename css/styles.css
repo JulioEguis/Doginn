@@ -382,3 +382,7 @@ h1, h2, h3 {
     background-color: #d32f2f; /* Color de fondo más oscuro al pasar el mouse por encima */
 }
 
+.menu-desplegable a {
+    text-decoration: none; /* Esta regla elimina el subrayado de todos los enlaces dentro del menú desplegable */
+    color: #070000;
+}
