@@ -1,43 +1,61 @@
-/* Estilos del título */
-.titulo {
-    text-align: center; 
-    margin: 0 auto; 
-    text-decoration: none;
-}
-
-
+/* Estilos para el header */
 header {
     display: flex;
-    justify-content: flex-end; 
-    align-items: center; 
-    padding: 10px; 
-    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
 }
 
 .menu-btn {
-    margin-left: 10px; 
-    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .menu-desplegable {
-    display: none; 
-    text-decoration: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
 }
 
-.menu-desplegable.activo {
-    display: block; 
-    text-decoration: none;
-    
-}
-/* Estilos para los enlaces dentro del menú desplegable */
-.menu-desplegable a {
-    text-decoration: none; /* Elimina el subrayado de todos los enlaces dentro del menú desplegable */
+.menu-desplegable.active {
+    display: block;
 }
 
-/* Estilos para los enlaces "Iniciar Sesión" y "Registrarse" dentro del menú desplegable */
-.menu-desplegable a[href="login.php"],
-.menu-desplegable a[href="registro.php"] {
-    text-decoration: none; /* Elimina el subrayado específicamente para los enlaces "Iniciar Sesión" y "Registrarse" */
-}
+/* Media query para hacer el menú responsive */
+@media screen and (max-width: 768px) {
+    .titulo {
+        font-size: 4rem; /* Tamaño de fuente más pequeño para dispositivos pequeños */
+    }
 
+    .menu-buttons {
+        display: none; /* Oculta los botones del menú principal en dispositivos pequeños */
+    }
+
+    .menu-desplegable {
+        position: static; /* Cambia la posición a estática para que aparezca debajo del título */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .menu-desplegable nav {
+        text-align: center; /* Centra los elementos del menú desplegable */
+    }
+
+    .menu-desplegable ul {
+        list-style-type: none; /* Elimina los estilos de lista */
+    }
+
+    .menu-desplegable li {
+        margin-bottom: 10px; /* Espacio entre elementos del menú */
+    }
+}
 

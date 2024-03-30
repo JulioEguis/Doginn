@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.logo {
+    width: 50px; /* Establece el ancho del logo según sea necesario */
+    height: auto; /* Permite que la altura del logo se ajuste automáticamente */
+}
+
+main {
+    text-align: center;
+    
+}
+
+main h2 {
+    color: #333; /* Color de texto para el encabezado */
+    font-size: 50px;
+}
+main p {
+    margin: 10px 0; /* Espaciado vertical para los párrafos */
+    font-size: 40px;
+}
+main h1 {
+    color: #2b1cb6; /* Color de texto para el encabezado */
+    font-size: 20px;
+}
+
+.registro-box {
+    display: inline-block; /* Cambiado a inline-block */
+    background-color: #007bff; /* Color de fondo azul */
+    padding: 10px 20px; /* Ajuste del espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none;
+}
+
+.registro-link {
+    color: #fff; /* Color de texto blanco */
+    text-decoration: none;
+}
+
+.registro-link:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+

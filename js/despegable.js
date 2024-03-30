@@ -11,5 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para alternar la visibilidad del menú desplegable
     function toggleMenuDesplegable() {
         menuDesplegable.classList.toggle('activo');
+
+        // Si el menú está activo, ajusta la posición del menú desplegable para que aparezca debajo del botón
+        if (menuDesplegable.classList.contains('activo')) {
+            var rect = this.getBoundingClientRect(); // Obtiene la posición del botón clickeado
+            menuDesplegable.style.top = rect.bottom + 'px'; // Establece la posición top del menú desplegable
+            menuDesplegable.style.left = rect.left + 'px'; // Establece la posición left del menú desplegable
+        }
     }
 });

@@ -110,6 +110,7 @@ h1, h2, h3 {
     font-size: 2rem;              /* Tamaño de fuente para títulos especiales */
 }
 
+
 /* Utilidades para anchos */
 .w-sm-100 {
     width: 100%;                  /* Ancho del 100% */
@@ -141,6 +142,7 @@ h1, h2, h3 {
 .navegacion-principal {
     display: flex;              /* Establece el contenedor de navegación como un contenedor flexible */
     flex-direction: column;     /* Alinea los elementos de la navegación en columna por defecto en pantallas pequeñas */
+  
 }
 
 @media (min-width: 768px) {
@@ -385,4 +387,10 @@ h1, h2, h3 {
 .menu-desplegable a {
     text-decoration: none; /* Esta regla elimina el subrayado de todos los enlaces dentro del menú desplegable */
     color: #070000;
+}
+/* estilos para el menu despegable */
+.menu-buttons {
+    position: absolute;
+    top: 90px; 
+    right: 80px; 
 }

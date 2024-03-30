@@ -1,0 +1,30 @@
+/* Estilos para el contenedor */
+.destacado-container {
+    text-align: center; /* Alinea el texto al centro */
+    background-color: #d4d4d1; /* Color de fondo del contenedor */
+    padding: 10px; /* Espacio interno alrededor del texto */
+    border-radius: 10px; /* Borde redondeado */
+    display: inline-block; /* Permite que el contenedor se ajuste al tamaño del texto */
+    margin-top: 2px;/* Espacio entre el contenedor y otros elementos */
+    position: relative;
+    z-index: 10; /* Para que el texto esté sobre el menú */
+    margin-bottom: 50px; /* Ajusta el margen inferior según sea necesario */
+    margin-right: 50px;    
+}
+   
+
+
+/* Estilos para el texto */
+.registro-guarderia {
+    color: black; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos al pasar el ratón */
+.registro-guarderia:hover {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.7), /* Sombra principal */
+                 0 0 40px rgba(0, 0, 0, 0.5), /* Difuminado */
+                 0 0 60px rgba(0, 0, 0, 0.3), /* Difuminado */
+                 0 0 80px rgba(0, 0, 0, 0.2); /* Difuminado */
+    border-radius: 50%; /* Hace que el difuminado sea circular */
+}
