@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para alternar la visibilidad del menú desplegable
     function toggleMenuDesplegable() {
+        console.log("Se ha hecho clic en un botón del menú.");
         menuDesplegable.classList.toggle('activo');
 
         // Si el menú está activo, ajusta la posición del menú desplegable para que aparezca debajo del botón

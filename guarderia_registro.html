@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Guardería en Doginn</title>
     <link rel="stylesheet" href="css/guarderia_registro.css">
-    <link rel="stylesheet" href="barra_progreso.css">
+    <link rel="stylesheet" href="css/barra_progreso.css">
 </head>
 <body>
-    <div class="container">
+   
         <header>
-            <a href="index_main.php"><img src="img/logo.png" alt="Logo de Doginn" class="logo"></a>
+            <a href="#"><img src="img/logo.png" alt="Logo de Doginn" class="logo"></a>
             <nav>
                 <a href="#">¿Quieres poner tu guardería canina en Doginn?</a>
                 <div class="registro-box">
@@ -19,22 +19,40 @@
             </nav>
         </header>
         <main>
-            <h2>Pon tu guardería canina.</h2>
-            <h2>Podrías ganar</h2>
-            <p>175 €</p>
-            <p>7 noches a unos 25 € por noche</p>
-            <h1>Descubre cómo calculamos cuánto podrías ganar</h1>
             
-            <input id="nochesInput" aria-valuetext="9 noches disponibles para reservar" aria-valuenow="9" aria-labelledby="estimate-wmpw" aria-describedby="estimate-wmpw-tooltip" class="iajvcf8 dir dir-ltr" min="1" max="30" step="1" type="range" value="9" style="--input_bgDirection: right; --input_progressPercentage: 27.586206896551722%; --input_background: linear-gradient(
-                to var(--input_bgDirection),
-                var(--input_backgroundFilledColor, var(--f-k-smk-x)) 0,
-                var(--input_backgroundFilledColor, var(--f-k-smk-x)) var(--input_progressPercentage),
-                var(--input_backgroundEmptyColor, var(--iw-ihca)) var(--input_progressPercentage),
-                var(--input_backgroundEmptyColor, var(--iw-ihca)) 0
-            );">
-            <p id="precioNoches">Precio total: 225€</p>
+            <h2 class="ganar-titulo">Pon tu guardería en Doginn</h2>
+            <h2>Podrías ganar</h2>
+            <p id="precioTotal">175 €</p>
+          <!--   <p>7 noches a unos 25 € por noche</p>-->
+            <p id="precioNoches">Precio total: 175€</p>
+          
+            
+            <input id="nochesInput" class="iajvcf8 dir dir-ltr" min="1" max="30" step="1" type="range" value="7">
+            <!--<p id="precioNoches">Precio total: 175€</p>-->
+            <h1>Descubre cómo calculamos cuánto podrías ganar</h1>
+
+            <section>
+                <h2 style="font-weight: bold;">Poner tu guardería en Doginn es muy fácil.</h2>
+                <a href="formulario_guarderia.php"><img src="img/pontudoginn.png" alt=""></a>
+            </section>
+            <div class="container">
+               
+                <section class="guarderista-section">
+                    <div>
+                        <p>Ayuda de un Guarderista experimentado</p>
+                        <h3>Te asignaremos un Guarderista de tu zona, que te guiará en tus primeros pasos hasta recibir tu primer huésped peludo. Podrán comunicarse por teléfono, videollamada o chat.</h3>
+                    </div>
+                    <div>
+                        <p>Un primer huésped canino experimentado</p>
+                        <h3>Para tu primera reserva, puedes decidir si prefieres recibir a un perro que ya tenga experiencia en guarderías: al menos tres estancias completas y una buena reputación.</h3>
+                    </div>
+                    <div>
+                        <p>Asistencia especializada de Doginn</p>
+                        <h3>Los nuevos Guarderistas tienen acceso directo a un equipo de Atención al Cliente exclusivo para resolver problemas relacionados con su cuenta, con la facturación y muchos otros aspectos.</h3>
+                    </div>
+                </section>
+            </div>
         </main>
-    </div>
-    <script src="barra_progreso.js"></script>
-</body>
-</html>
+        <script src="js/barra_progreso.js"></script>
+    </body>
+    </html>

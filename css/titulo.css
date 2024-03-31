@@ -1,13 +1,22 @@
 .titulo {
   text-align: center;
-  margin: 0 auto;
   font-size: 7rem;
   padding: 1rem;
   transition: transform 0.5s ease;
   cursor: pointer;
   color: rgb(59, 59, 211);
   text-decoration: none;
-  margin-right: 2%; /* Usamos un valor relativo */
+  margin: 0 auto; /* Centra horizontalmente el elemento */
+  display: block; /* Asegura que ocupe todo el ancho disponible */
+  margin-right: 29%;
+}
+
+/* Media query para pantallas más pequeñas, como dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .titulo {
+    font-size: 4rem; /* Reduce el tamaño del título para dispositivos móviles */
+    margin-left: 10%; /* Ajusta el margen izquierdo para dispositivos móviles */
+  }
 }
 
 .titulo:hover {

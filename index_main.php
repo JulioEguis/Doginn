@@ -39,24 +39,26 @@ if (isset($_SESSION['usuario_nombre'])) {
 <body>
     <!-- Encabezado de la página -->
     <header>
-        <div class="menu-buttons">
-            <img id="menu-usuario-btn" class="menu-btn" src="img/usuario.svg" alt="Usuario" style="width: 35px; height: 35px;">
-            <img id="menu-lineas-btn" class="menu-btn" src="img/lineas.svg" alt="Líneas" style="width: 35px; height: 35px;">
-        </div>
-        <h1 class="titulo" id="titulo">DOGINN <span>Booking</span></h1>
-        <!-- Contenedor para pon tu guardería -->
-        <div class="destacado-container">
-            <a href="guarderia_registro.html" class="registro-guarderia">Pon tu Guardería en Doginn</a>
-        </div>
-        <div id="menu-desplegable" class="menu-desplegable">
-            <nav>
-                <ul>
-                    <li><a href="login.php">Iniciar Sesión</a></li>
-                    <li><a href="registro.php">Regístrate</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="menu-buttons">
+        <img id="menu-usuario-btn" class="menu-btn" src="img/usuario.svg" alt="Usuario" style="width: 35px; height: 35px;">
+        <img id="menu-lineas-btn" class="menu-btn" src="img/lineas.svg" alt="Líneas" style="width: 35px; height: 35px;">
+    </div>
+    <h1 class="titulo" id="titulo">DOGINN <span>Booking</span></h1>
+    <!-- Contenedor para pon tu guardería -->
+    <div class="destacado-container">
+        <a href="guarderia_registro.html" class="registro-guarderia">Pon tu Guardería en Doginn</a>
+    </div>
+    <div id="menu-desplegable" class="menu-desplegable">
+        <nav>
+            <ul>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+                <li><a href="registro.php">Regístrate</a></li>
+                <li><a href="guarderia_registro.html" class="registro-guarderia">Pon tu Guardería en Doginn</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
 
 
@@ -206,7 +208,7 @@ if (isset($_SESSION['usuario_nombre'])) {
     </footer>
     <script src="js/despegable.js"></script>
     <script src="js/titulo.js"></script>
-    <script src="pontuguarde.js"></script>
+    <script src="js/pontuguarde.js"></script>
 
 
 </body>
