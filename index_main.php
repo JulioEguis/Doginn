@@ -31,7 +31,7 @@ if (isset($_SESSION['usuario_nombre'])) {
     <link rel="stylesheet" href="css/login.css">
     <link rel="preload" href="css/cerrar_sesion.css" as="style">
     <link rel="stylesheet" href="css/cerrar_sesion.css">
-    <link rel="stylesheet" href="css/menudespegable.css">
+    <link rel="stylesheet" href="css/despegable.css">
     <link rel="stylesheet" href="css/titulo.css">
     <link rel="stylesheet" href="css/pontuguarde.css">
 
@@ -39,28 +39,24 @@ if (isset($_SESSION['usuario_nombre'])) {
 <body>
     <!-- Encabezado de la página -->
     <header>
-    <div class="menu-buttons">
-        <img id="menu-usuario-btn" class="menu-btn" src="img/usuario.svg" alt="Usuario" style="width: 35px; height: 35px;">
-        <img id="menu-lineas-btn" class="menu-btn" src="img/lineas.svg" alt="Líneas" style="width: 35px; height: 35px;">
-    </div>
+   
     <h1 class="titulo" id="titulo">DOGINN <span>Booking</span></h1>
     <!-- Contenedor para pon tu guardería -->
     <div class="destacado-container">
         <a href="guarderia_registro.html" class="registro-guarderia">Pon tu Guardería en Doginn</a>
     </div>
-    <div id="menu-desplegable" class="menu-desplegable">
+    <div >
         <nav>
             <ul>
                 <li><a href="login.php">Iniciar Sesión</a></li>
                 <li><a href="registro.php">Regístrate</a></li>
-                <li><a href="guarderia_registro.html" class="registro-guarderia">Pon tu Guardería en Doginn</a></li>
+               
             </ul>
         </nav>
     </div>
 </header>
 
-
-
+<div class="contenedor-principal"> <!-- Agregado el contenedor principal -->
 
     <div class="usuario-info">
         <!-- Imprime el saludo de usuario -->
@@ -204,12 +200,12 @@ if (isset($_SESSION['usuario_nombre'])) {
     </main>
     
     <footer class="footer">
-        <p>Todos los derechos reservados. Sergio y Julio</p>
-    </footer>
-    <script src="js/despegable.js"></script>
-    <script src="js/titulo.js"></script>
-    <script src="js/pontuguarde.js"></script>
+    <p>Todos los derechos reservados. Sergio y Julio</p>
+</footer>
 
+</div> <!-- Cierre del contenedor principal -->
+
+<script src="js/despegable.js"></script>
 
 </body>
 </html>
