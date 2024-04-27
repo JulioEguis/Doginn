@@ -3,6 +3,7 @@ session_start();
 // Comprueba si la clave 'usuario_nombre' existe en el array $_SESSION
 if (isset($_SESSION['usuario_nombre'])) {
     $saludo = "Hola, " . $_SESSION['usuario_nombre'];
+    
 } else {
     // si no hay nombre de usuario, la variable $saludo se establece en una cadena vacía
     $saludo = ""; // si no hay nombre de usuario, la variable $saludo se establece en una cadena vacía
@@ -70,7 +71,7 @@ if (isset($_SESSION['usuario_nombre'])) {
         <nav class="navegacion-principal contenedor">
             <a href="#">Inicio</a>
             <a href="reservas.php">Guarderías</a>
-            <a href="#">Galeria</a>
+            <a href="#">Galería</a>
             <a href="#">Contacto</a>
        
            
