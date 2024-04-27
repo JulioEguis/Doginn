@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Exitoso</title>
+    <link rel="stylesheet" href="css/registro_exitoso.css">
+</head>
+<body>
+    <div class="container">
+        <h2>¡Registro Exitoso!</h2>
+        <p>Tu guardería ha sido registrada exitosamente.</p>
+        <a href="index_main.php" class="btn-continuar">Volver al inicio</a>
+    </div>
+    <div class="container">
+        <h2>Nuestro compromiso de la comunidad</h2>
+        <p>Doginn es una comunidad donde cualquier perruno puede sentirse como en casa donde vaya. Para asegurarnos de que es así, te pedimos que te comprometas a lo siguiente:</p>
+        <ul>
+            <li>Me comprometo a respetar y tratar sin prejuicios a todos los miembros de la comunidad de Doginn, independientemente de su origen, religión, nacionalidad, etnia, color de piel, sexo, identidad de género, orientación sexual o edad, o de si tienen una discapacidad.</li>
+        </ul>
+        <form action="procesar_compromiso.php" method="post">
+            <button type="submit" name="aceptar" class="btn-continuar">Aceptar y Continuar</button>
+            <button type="submit" name="rechazar" class="btn-rechazar">Rechazar</button>
+        </form>
+    </div>
+</body>
+</html>
