@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url(../img/fondo.jpg);
+background-size: contain; /* Ajusta el tamaño de la imagen para que quepa en el contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+.logo {
+    max-width: 70%; /* Establece el ancho máximo de la imagen al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.container p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 18px; 
+}
+
+
+
+
+ul {
+    text-align: left;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btn-continuar, .btn-rechazar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.btn-continuar {
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-rechazar {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-continuar:hover {
+    background-color: #45a049;
+}
+
+.btn-rechazar:hover {
+    background-color: #e53935;
+}

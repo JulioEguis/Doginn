@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 100px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+}
+.gallery-title {
+    font-size: 50px; /* Tamaño de fuente más grande */
+    color: #4442a7; /* Color del texto diferente */
+    margin-top: -20px; /* Ajusta este valor según sea necesario para mover el título hacia arriba */
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none; 
+}
+
+.image-container:hover .delete-btn {
+    display: block; 
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.upload-btn {
+    padding: 2px 10px; /* Ajustar el padding para que el botón tenga un tamaño similar */
+    background-color: #6495ED; /* Establecer el color de fondo */
+    color: #fff; /* Establecer el color del texto */
+    border: none;
+    margin-bottom: 15px;
+    
+border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Aplicar transición al color de fondo */
+    text-decoration: none;
+}
+.btn-cerrar-sesion {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.upload-btn:hover, .dashboard-btn:hover {
+    background-color: #388e3c;
+}
+
+.upload-message {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+.dashboard-btn {
+    background-color: #FFA500; /* Cambia el color de fondo del botón */
+    color: #fff; /* Cambia el color del texto del botón */
+    padding: 10px 20px; /* Ajusta el relleno del botón según sea necesario */
+    border-radius: 5px; /* Añade un borde redondeado al botón */
+    text-decoration: none; /* Elimina cualquier subrayado del texto */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+}
+
+.dashboard-btn:hover {
+    
+  
+background-color: #FF8C00; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
