@@ -45,7 +45,12 @@ $conexion->close();
         <a href="subir_fotos.php" class="btn-administracion">Subir Fotos</a>
         <a href="cambiar_datos.php" class="btn-administracion">Cambiar Datos</a>
         <a href="publicar_disponibilidad.php" class="btn-administracion">Publicar Disponibilidad</a>
-        <a href="logout.php" class="btn-cerrar-sesion">Cerrar Sesión</a> <!-- Nuevo botón para cerrar sesión -->
+        
     </div>
+    <div class="btn-cerrar-sesion-container">
+    <a href="logout.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
+</div>
+
+
 </body>
 </html>

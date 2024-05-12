@@ -34,7 +34,7 @@ h2 {
 .btn-cerrar-sesion {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 300px; /* Cambia 'right' a 'left' y ajusta la distancia desde el borde izquierdo */
     padding: 10px 20px;
     background-color: #4c6fb1;
     color: white;
@@ -46,5 +46,6 @@ h2 {
 }
 
 .btn-cerrar-sesion:hover {
-    background-color: #e0e0e0; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #e0e0e0;
 }
+
