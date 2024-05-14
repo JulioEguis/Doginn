@@ -1,0 +1,64 @@
+.calendario-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.calendario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendario th,
+.calendario td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.calendario th {
+    background-color: #f2f2f2;
+}
+
+.btn-dia {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-dia:hover {
+    opacity: 0.7;
+}
+
+.btn-dia.disponible {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+.btn-dia.no-disponible {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+.leyenda {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.leyenda span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.leyenda .leyenda-disponible {
+    background-color: #4CAF50; /* Verde */
+}
+
+.leyenda .leyenda-no-disponible {
+    background-color: #f44336; /* Rojo */
+}
