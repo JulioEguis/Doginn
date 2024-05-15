@@ -69,7 +69,7 @@ $conexion->close();
                         </form>
                         <form action="aceptar_reserva.php" method="post">
                             <input type="hidden" name="reserva_id" value="<?php echo $reserva['id_reserva']; ?>">
-                            <button type="submit" class="btn-aceptar">Aceptar</button>
+                            <button type="submit" class="btn-aceptar">Aceptar Reserva</button>
                         </form>
                         <form action="rechazar_reserva.php" method="post">
                             <input type="hidden" name="reserva_id" value="<?php echo $reserva['id_reserva']; ?>">
