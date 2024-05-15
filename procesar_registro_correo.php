@@ -22,29 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefono = $_POST["telefono"];
     $correo_electronico = $_POST['correo'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hasheamos la contraseña
-    
-    // Ruta de almacenamiento de las imágenes
-    $ruta_imagenes = "img/";
-
-    // Procesamos y movemos las imágenes
-    $imagen1 = $_FILES["imagen1"]["name"];
-    $imagen2 = $_FILES["imagen2"]["name"];
-
-    move_uploaded_file($_FILES["imagen1"]["tmp_name"], $ruta_imagenes . $imagen1);
-    move_uploaded_file($_FILES["imagen2"]["tmp_name"], $ruta_imagenes . $imagen2);
-
-    // Definimos la URL de las imágenes
-    $imagen_url1 = $ruta_imagenes . $imagen1;
-    $imagen_url2 = $ruta_imagenes . $imagen2;
 
     // Preparamos la consulta SQL para insertar los datos del usuario en la base de datos
-    $sql = "INSERT INTO guarderias (nombre_guarderia, direccion, telefono, imagen_url, correo_electronico, password) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO guarderias (nombre_guarderia, direccion, telefono, correo_electronico, password) VALUES (?, ?, ?, ?, ?)";
 
     // Preparamos la consulta
     $stmt = $conexion->prepare($sql);
 
     // Vinculamos los parámetros
-    $stmt->bind_param("ssssss", $nombre_guarderia, $direccion, $telefono, $imagen_url1, $correo_electronico, $password);
+    $stmt->bind_param("sssss", $nombre_guarderia, $direccion, $telefono, $correo_electronico, $password);
 
     // Ejecutamos la consulta
     if ($stmt->execute()) {

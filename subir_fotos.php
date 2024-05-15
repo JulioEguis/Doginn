@@ -84,7 +84,7 @@ if ($resultado_imagenes->num_rows > 0) {
         // Formulario para eliminar la imagen
         echo "<form action='subir_fotos.php' method='post' onsubmit='return confirmarEliminacion()'>";
         echo "<input type='hidden' name='id_imagen' value='" . $fila_imagen['id'] . "'>";
-        echo "<button type='submit' class='delete-btn' name='eliminar_imagen'>Eliminar</button>";
+        echo "<button type='submit' class='delete-btn' name='eliminar_imagen'>X</button>";
         echo "</form>";
         
         echo "</div>";

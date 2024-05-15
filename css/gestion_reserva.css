@@ -1,0 +1,123 @@
+/* Estilos mejorados para la página de gestión de reservas */
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar contenido */
+}
+
+/* Estilos para la sección de reservas */
+.reservas {
+    margin-top: 20px;
+}
+
+.reserva {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los botones de acciones */
+.acciones {
+    margin-top: 10px;
+}
+
+.btn-anular,
+.btn-aceptar,
+.btn-rechazar {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Colores de los botones según la acción */
+.btn-anular {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-aceptar {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-rechazar {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Estilos para los botones de volver y cerrar sesión */
+.btn-volver,
+.btn-cerrar-sesion {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover sobre los botones de volver y cerrar sesión */
+.btn-volver:hover,
+.btn-cerrar-sesion:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el logotipo */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 200px; /* Tamaño máximo del logotipo */
+    height: auto;
+}
+
+/* Estilos para los botones de acciones */
+.acciones {
+    margin-top: 10px;
+    display: flex; /* Alinear los botones en una fila */
+    justify-content: center; /* Centrar los botones horizontalmente */
+}
+
+.btn-anular,
+.btn-aceptar,
+.btn-rechazar {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Colores de los botones según la acción */
+.btn-anular {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-aceptar {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-rechazar {
+    background-color: #ffc107;
+    color: #000;
+}

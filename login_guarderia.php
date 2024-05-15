@@ -51,6 +51,8 @@ $conexion->close();
     <link rel="stylesheet" href="css/login_guarderia.css"> <!-- Asegúrate de ajustar la ruta del archivo CSS si es necesario -->
 </head>
 <body>
+<a href="index_main.php" class="btn-cerrar-sesion">Inicio</a>
+
 <div class="container">
         <img src="img/logo-removebg-preview.png" alt="Logo de la guardería" class="logo">
         <h2>Iniciar Sesión - Guardería</h2>

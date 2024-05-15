@@ -41,7 +41,7 @@ $conexion->close();
     <img src="img/logo-removebg-preview.png" alt="Logo de la guardería" style="max-width: 20%; height: auto;">
         <h2>Bienvenida Guardería, <?php echo $nombre_guarderia; ?>!</h2>
         <p>Total de reservas: <?php echo $total_reservas; ?></p>
-        <a href="gestion_reservas.php" class="btn-administracion">Administración de Reservas</a>
+        <a href="gestion_reserva.php" class="btn-administracion">Gestión de Reservas</a>
         <a href="subir_fotos.php" class="btn-administracion">Subir Fotos</a>
         <a href="cambiar_datos.php" class="btn-administracion">Cambiar Datos</a>
         <a href="publicar_disponibilidad.php" class="btn-administracion">Publicar Disponibilidad</a>

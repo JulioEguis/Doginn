@@ -1,0 +1,77 @@
+/* Estilos para la página de reservas de guarderías */
+
+/* Estilos para el contenedor principal de las guarderías */
+.contenedor-guarderias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Estilo para el título de la página */
+h2 {
+    text-align: center; /* Centrar el texto */
+    color: #007bff; /* Color azul */
+    margin-bottom: 50px; /* Espacio inferior */
+}
+
+
+/* Estilos para cada guardería */
+.guarderia {
+    border: 2px solid #007bff; /* Borde azul */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px;
+    padding: 20px;
+    width: calc(33% - 40px); /* Ancho con margen */
+    text-align: center; /* Centrar contenido */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para la imagen representativa de la guardería */
+.imagen-representativa {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Estilos para las imágenes adicionales */
+.imagenes-adicionales {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Estilos para el botón "Más Imágenes" */
+.btn-mas-imagenes {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn-mas-imagenes:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para el logo de Doginn */
+.logo-doginn {
+    display: block;
+    margin: 0 auto 20px; /* Centrar y agregar espacio abajo */
+    width: 200px; /* Tamaño del logo */
+}
+.btn-cerrar-sesion {
+    position: absolute;
+    top: 20px;
+    right: 300px; /* Cambia 'right' a 'left' y ajusta la distancia desde el borde izquierdo */
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
