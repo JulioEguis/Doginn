@@ -55,9 +55,13 @@ $conexion->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiar Datos de la Guardería</title>
     <link rel="stylesheet" type="text/css" href="css/cambiar_datos.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+<a href="despedida.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
 <div class="container">
+
+    <img src="img/logo-removebg-preview.png" alt="Logo de DOGINN" class="logo">
     <h2>Cambiar Datos de la Guardería</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
@@ -80,6 +84,7 @@ $conexion->close();
         <button type="submit" class="btn-submit">Guardar Cambios</button>
     </form>
     <a href="dashboard1.php" class="btn-volver">Volver al Dashboard</a>
+   
 </div>
 
 <!-- Script JavaScript -->

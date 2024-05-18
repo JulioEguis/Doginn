@@ -6,6 +6,7 @@
     <title>Formulario de Registro de Guardería en Doginn</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/formulario_guarderia.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">

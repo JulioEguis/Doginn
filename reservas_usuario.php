@@ -43,9 +43,15 @@ $conexion->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Reservas</title>
     <link rel="stylesheet" href="css/reservas_usuario.css">
+    <link rel="icon" href="img/faviusuario.png" type="image/x-icon">
 </head>
 <body>
+<body>
+    <div class="logo-container">
+        <img src="img/tenor.gif" alt="Logo de la guardería" class="logo">
+    </div>
     <h2>Mis Reservas</h2>
+    
     <div class="reservas-container">
         <?php if (empty($reservas)): ?>
             <p>No has realizado ninguna reserva.</p>
@@ -71,6 +77,10 @@ $conexion->close();
                 </tbody>
             </table>
         <?php endif; ?>
+    </div>
+    <div class="buttons-container">
+        <a href="reservas.php" class="btn-volver">Volver a Guarderías</a>
+        <a href="despedida.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
     </div>
 </body>
 </html>

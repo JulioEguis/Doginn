@@ -14,7 +14,11 @@ h2 {
     color: #333;
     margin-bottom: 30px;
 }
-
+/* Estilo para el nombre de la guardería */
+.nombre-guarderia {
+    font-size: 40px; /* Aumentar tamaño de fuente */
+    color: #121294; /* Azul más oscuro */
+}
 .btn-administracion {
     display: block;
     width: 200px;

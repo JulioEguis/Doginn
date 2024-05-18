@@ -7,6 +7,14 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+}
+
+/* Estilos para el logo */
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 /* Estilos para el título */
@@ -55,6 +63,26 @@ textarea {
     background-color: #0056b3;
 }
 
+/* Estilos para el botón de cerrar sesión */
+.btn-cerrar-sesion {
+    position: fixed;
+    top: 20px;
+    right: 200px;
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #0056b3;
+}
+
 /* Estilos para el botón de volver */
 .btn-volver {
     display: inline-block;
@@ -71,4 +99,14 @@ textarea {
 
 .btn-volver:hover {
     background-color: #999;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .btn-cerrar-sesion {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

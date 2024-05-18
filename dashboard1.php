@@ -35,22 +35,20 @@ $conexion->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Administración de Guardería</title>
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-    <img src="img/logo-removebg-preview.png" alt="Logo de la guardería" style="max-width: 20%; height: auto;">
-        <h2>Bienvenida Guardería, <?php echo $nombre_guarderia; ?>!</h2>
-        <p>Total de reservas: <?php echo $total_reservas; ?></p>
-        <a href="gestion_reserva.php" class="btn-administracion">Gestión de Reservas</a>
+        <img src="img/logo-removebg-preview.png" alt="Logo de la guardería" style="max-width: 20%; height: auto;">
+        <h2>Bienvenida Guardería, <span class="nombre-guarderia"><?php echo $nombre_guarderia; ?></span>!</h2>
+     
         <a href="subir_fotos.php" class="btn-administracion">Subir Fotos</a>
         <a href="cambiar_datos.php" class="btn-administracion">Cambiar Datos</a>
         <a href="publicar_disponibilidad.php" class="btn-administracion">Publicar Disponibilidad</a>
-        
+        <a href="mis_reservas.php" class="btn-administracion">Mis Reservas</a> <!-- Nuevo enlace -->
     </div>
     <div class="btn-cerrar-sesion-container">
-    <a href="logout.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
-</div>
-
-
+        <a href="logout.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
+    </div>
 </body>
 </html>

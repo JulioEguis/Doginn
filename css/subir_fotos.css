@@ -6,14 +6,19 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
+    margin-left: 200px;
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
+}
+
+.title-container {
+    text-align: center; /* Centrar el contenido del contenedor */
 }
 
 .gallery {
@@ -25,8 +30,17 @@ h2 {
 
 .gallery-title {
     font-size: 50px; /* Tamaño de fuente más grande */
-    color: #4442a7; /* Color del texto diferente */
+    color: #0044cc; /* Color azul oscuro */
     margin-top: -20px; /* Ajusta este valor según sea necesario para mover el título hacia arriba */
+    font-weight: bold; /* Negrita para mayor impacto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para hacer el texto más llamativo */
+}
+
+.guarderia-title {
+    font-size: 50px; /* Tamaño de fuente más grande */
+    color: #000000; /* Color negro */
+    margin-top: -20px; /* Ajusta este valor según sea necesario para mover el título hacia arriba */
+    font-weight: bold; /* Negrita para mayor impacto */
 }
 
 .image-container {
@@ -89,10 +103,14 @@ h2 {
     text-decoration: none;
 }
 
+.form-container {
+    text-align: left; /* Asegurar que el formulario no esté centrado */
+}
+
 .btn-cerrar-sesion {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 300px;
     padding: 10px 20px;
     background-color: #4c6fb1;
     color: white;

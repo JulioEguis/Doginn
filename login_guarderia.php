@@ -48,7 +48,8 @@ $conexion->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicia Sesión en tu Guardería</title>
-    <link rel="stylesheet" href="css/login_guarderia.css"> <!-- Asegúrate de ajustar la ruta del archivo CSS si es necesario -->
+    <link rel="stylesheet" href="css/login_guarderia.css"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 <a href="index_main.php" class="btn-cerrar-sesion">Inicio</a>

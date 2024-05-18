@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Guarderías</title>
     <link rel="stylesheet" href="css/imagenes_guarderia.css">
+    <link rel="icon" href="img/faviusuario.png" type="image/x-icon">
 </head>
 <body>
 <a href="index_main.php" class="btn-cerrar-sesion">Inicio</a>
