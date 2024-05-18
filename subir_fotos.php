@@ -1,4 +1,9 @@
 <?php
+// Habilitar la visualización de errores
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Incluir el archivo de conexión a la base de datos
 include('includes/conexion.php');
 
@@ -12,6 +17,18 @@ if (!isset($_SESSION['id_guarderia'])) {
 
 // Obtener el ID de la guardería que ha iniciado sesión
 $guarderia_id = $_SESSION['id_guarderia'];
+
+// Obtener el nombre de la guardería desde la base de datos
+$query_nombre_guarderia = "SELECT nombre_guarderia FROM guarderias WHERE id_guarderia = ?";
+$stmt_nombre_guarderia = $conexion->prepare($query_nombre_guarderia);
+if (!$stmt_nombre_guarderia) {
+    die("Error en la preparación de la consulta: " . $conexion->error);
+}
+$stmt_nombre_guarderia->bind_param("i", $guarderia_id);
+$stmt_nombre_guarderia->execute();
+$stmt_nombre_guarderia->bind_result($nombre_guarderia);
+$stmt_nombre_guarderia->fetch();
+$stmt_nombre_guarderia->close();
 
 // Verificar si se ha enviado un formulario para subir una nueva foto
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['imagen'])) {
@@ -28,6 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['imagen'])) {
         // Insertar la ruta de la imagen en la base de datos
         $query_insertar_imagen = "INSERT INTO imagenes_guarderia (id_guarderia, imagen_url, ruta_imagen) VALUES (?, ?, ?)";
         $stmt = $conexion->prepare($query_insertar_imagen);
+        if (!$stmt) {
+            die("Error en la preparación de la consulta: " . $conexion->error);
+        }
         $stmt->bind_param("iss", $guarderia_id, $nombre_imagen, $ruta_servidor);
 
         // Ejecutar la consulta
@@ -52,6 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar_imagen'])) {
     // Preparar la declaración SQL para eliminar la imagen de la base de datos
     $query_eliminar_imagen = "DELETE FROM imagenes_guarderia WHERE id = ?";
     $stmt = $conexion->prepare($query_eliminar_imagen);
+    if (!$stmt) {
+        die("Error en la preparación de la consulta: " . $conexion->error);
+    }
     $stmt->bind_param("i", $id_imagen);
 
     // Ejecutar la consulta
@@ -70,7 +93,7 @@ $query_consulta_imagenes = "SELECT imagen_url, id FROM imagenes_guarderia WHERE 
 $resultado_imagenes = $conexion->query($query_consulta_imagenes);
 
 // Mostrar todas las imágenes de la guardería
-echo "<h2 class='gallery-title'>Imágenes de la Guardería</h2>";
+echo "<h2 class='gallery-title'> $nombre_guarderia</h2>";
 echo "<div class='gallery'>";
 if ($resultado_imagenes->num_rows > 0) {
     while ($fila_imagen = $resultado_imagenes->fetch_assoc()) {
@@ -103,6 +126,7 @@ echo "</div>";
     <span id="file-selected-message" class="upload-message"></span>
     <button type="submit" class="upload-btn">Subir Foto</button>
     <link rel="stylesheet" type="text/css" href="css/subir_fotos.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </form>
 
 <a href="dashboard1.php" class="upload-btn dashboard-btn">Volver al Dashboard</a>

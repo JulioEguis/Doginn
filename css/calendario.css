@@ -1,5 +1,6 @@
 .calendario-container {
-    margin: 20px auto;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -11,54 +12,42 @@
 .calendario th,
 .calendario td {
     padding: 10px;
-    border: 1px solid #ccc;
 }
 
-.calendario th {
-    background-color: #f2f2f2;
-}
-
-.btn-dia {
+.dia {
     width: 30px;
     height: 30px;
-    border: none;
-    border-radius: 50%;
+    border: 1px solid #ccc;
     cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-dia:hover {
-    opacity: 0.7;
+.dia:hover {
+    background-color: #f0f0f0;
 }
 
-.btn-dia.disponible {
-    background-color: #4CAF50; /* Verde */
-    color: white;
+.dia.disponible {
+    background-color: #c3e6cb;
 }
 
-.btn-dia.no-disponible {
-    background-color: #f44336; /* Rojo */
-    color: white;
+.dia.no-disponible {
+    background-color: #f5c6cb;
 }
 
 .leyenda {
     margin-top: 20px;
-    text-align: center;
 }
 
 .leyenda span {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
 }
 
-.leyenda .leyenda-disponible {
-    background-color: #4CAF50; /* Verde */
+.leyenda-disponible {
+    background-color: #c3e6cb;
 }
 
-.leyenda .leyenda-no-disponible {
-    background-color: #f44336; /* Rojo */
+.leyenda-no-disponible {
+    background-color: #f5c6cb;
 }

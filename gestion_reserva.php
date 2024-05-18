@@ -1,42 +1,19 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
 include('includes/conexion.php');
 
-// Iniciar sesión
-session_start();
+$id_guarderia = $_GET['id_guarderia']; // Asegúrate de que 'id_guarderia' se pasa correctamente por URL
 
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['id_guarderia'])) {
-    header("Location: login_guarderia.php");
-    exit();
+// Obtener las fechas disponibles
+$fechas_disponibles = [];
+$query = "SELECT fecha FROM calendarios_disponibilidad WHERE id_guarderia = ?";
+$stmt = $conexion->prepare($query);
+$stmt->bind_param("i", $id_guarderia);
+$stmt->execute();
+$resultado = $stmt->get_result();
+while ($fila = $resultado->fetch_assoc()) {
+    $fechas_disponibles[] = $fila['fecha'];
 }
-
-$guarderia_id = $_SESSION['id_guarderia'];
-
-// Obtener el nombre de la guardería
-$sql = "SELECT nombre_guarderia FROM guarderias WHERE id_guarderia = $guarderia_id";
-$resultado = $conexion->query($sql);
-
-if ($resultado === false) {
-    die("Error en la consulta SQL: " . $conexion->error);
-}
-
-if ($resultado->num_rows > 0) {
-    $fila = $resultado->fetch_assoc();
-    $nombre_guarderia = $fila['nombre_guarderia'];
-} else {
-    die("No se encontró información de la guardería.");
-}
-
-// Consultar las reservas de la guardería
-$query_reservas = "SELECT * FROM reservas WHERE id_reserva = $guarderia_id";
-$resultado_reservas = $conexion->query($query_reservas);
-
-if ($resultado_reservas === false) {
-    die("Error en la consulta de reservas: " . $conexion->error);
-}
-
-$conexion->close();
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -44,62 +21,64 @@ $conexion->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Reservas - <?php echo isset($nombre_guarderia) ? htmlspecialchars($nombre_guarderia) : 'No definido'; ?></title>
-    <link rel="stylesheet" type="text/css" href="css/gestion_reserva.css">
+    <title>Reserva de Guardería</title>
+    <link rel="stylesheet" href="css/gestion_reserva.css">
 </head>
 <body>
-<div class="container">
-    <div class="logo-container">
-        <img src="img/logo-removebg-preview.png" alt="Logo de Doginn" class="logo">
-    </div>
-    <h2>Gestión de Reservas - <?php echo isset($nombre_guarderia) ? htmlspecialchars($nombre_guarderia) : 'No definido'; ?></h2>
-    <div class="reservas">
-        <?php if ($resultado_reservas && $resultado_reservas->num_rows > 0): ?>
-            <?php while ($reserva = $resultado_reservas->fetch_assoc()): ?>
-                <div class="reserva">
-                    <p><strong>Nombre del Cliente:</strong> <?php echo htmlspecialchars($reserva['id_usuario']); ?></p>
-                    <p><strong>Fecha de Reserva:</strong> <?php echo htmlspecialchars($reserva['fecha']); ?></p>
-                    <p><strong>Estado:</strong> <?php echo htmlspecialchars($reserva['estado']); ?></p>
-                    
-                    <!-- Agregar botones para anular, aceptar o rechazar la reserva -->
-                    <div class="acciones">
-                        <form action="anular_reserva.php" method="post">
-                            <input type="hidden" name="reserva_id" value="<?php echo $reserva['id_reserva']; ?>">
-                            <button type="submit" class="btn-anular">Anular</button>
-                        </form>
-                        <form action="aceptar_reserva.php" method="post">
-                            <input type="hidden" name="reserva_id" value="<?php echo $reserva['id_reserva']; ?>">
-                            <button type="submit" class="btn-aceptar">Aceptar Reserva</button>
-                        </form>
-                        <form action="rechazar_reserva.php" method="post">
-                            <input type="hidden" name="reserva_id" value="<?php echo $reserva['id_reserva']; ?>">
-                            <button type="submit" class="btn-rechazar">Rechazar</button>
-                        </form>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        <?php else: ?>
-            <p>No hay reservas disponibles.</p>
-            <!-- Mostrar botones incluso si no hay reservas -->
-            <div class="acciones">
-                <form action="anular_reserva.php" method="post">
-                    <input type="hidden" name="reserva_id" value="">
-                    <button type="submit" class="btn-anular">Anular</button>
-                </form>
-                <form action="aceptar_reserva.php" method="post">
-                    <input type="hidden" name="reserva_id" value="">
-                    <button type="submit" class="btn-aceptar">Aceptar</button>
-                </form>
-                <form action="rechazar_reserva.php" method="post">
-                    <input type="hidden" name="reserva_id" value="">
-                    <button type="submit" class="btn-rechazar">Rechazar</button>
-                </form>
-            </div>
-        <?php endif; ?>
-    </div>
-    <a href="dashboard1.php" class="btn-volver">Volver al Dashboard</a>
-    <a href="logout.php" class="btn-cerrar-sesion">Cerrar Sesión</a>
-</div>
+
+<a href="index_main.php" class="btn-volver">Volver a Inicio</a>
+<div class="form-container">
+
+        <img src="img/logo-removebg-preview.png" alt="Doginn Logo" class="logo">
+        
+    <h2>Reserva de Guardería</h2>
+    <form action="procesar_reserva.php" method="post">
+        <label for="fecha_inicio">Fecha de Inicio:</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+        
+        <label for="fecha_fin">Fecha de Fin:</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" required>
+        
+        <label for="raza_perro">Raza del Perro:</label>
+        <input type="text" id="raza_perro" name="raza_perro" required>
+        
+        <label for="nombre_usuario">Tu Nombre:</label>
+        <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+        
+        <label for="email_usuario">Correo Electrónico:</label>
+        <input type="email" id="email_usuario" name="email_usuario" required>
+        
+        <label for="telefono_usuario">Número de Teléfono:</label>
+        <input type="tel" id="telefono_usuario" name="telefono_usuario" required>
+        
+        <input type="hidden" name="id_guarderia" value="<?php echo htmlspecialchars($id_guarderia); ?>">
+
+        <button type="submit">Enviar Reserva</button>
+    </form>
+ 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fechasDisponibles = <?php echo json_encode($fechas_disponibles); ?>;
+            const fechaInicioInput = document.getElementById('fecha_inicio');
+            const fechaFinInput = document.getElementById('fecha_fin');
+
+            fechaInicioInput.addEventListener('input', function() {
+                const fechaSeleccionada = fechaInicioInput.value;
+                if (!fechasDisponibles.includes(fechaSeleccionada)) {
+                    alert('La fecha de inicio seleccionada no está disponible.');
+                    fechaInicioInput.value = '';
+                }
+            });
+
+            fechaFinInput.addEventListener('input', function() {
+                const fechaSeleccionada = fechaFinInput.value;
+                if (!fechasDisponibles.includes(fechaSeleccionada)) {
+                    alert('La fecha de fin seleccionada no está disponible.');
+                    fechaFinInput.value = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-

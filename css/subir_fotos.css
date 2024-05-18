@@ -22,6 +22,7 @@ h2 {
     grid-gap: 20px;
     justify-items: center;
 }
+
 .gallery-title {
     font-size: 50px; /* Tamaño de fuente más grande */
     color: #4442a7; /* Color del texto diferente */
@@ -35,6 +36,8 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     transition: transform 0.2s ease;
+    width: 100%; /* Ajustar al tamaño del contenedor */
+    height: 200px; /* Puedes ajustar esta altura según tus necesidades */
 }
 
 .image-container:hover {
@@ -43,8 +46,9 @@ h2 {
 }
 
 .image-container img {
-    width: 150px;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -78,13 +82,13 @@ h2 {
     color: #fff; /* Establecer el color del texto */
     border: none;
     margin-bottom: 15px;
-    
-border-radius: 5px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Aplicar transición al color de fondo */
     text-decoration: none;
 }
+
 .btn-cerrar-sesion {
     position: absolute;
     top: 20px;
@@ -108,6 +112,7 @@ border-radius: 5px;
     display: block;
     text-align: center;
 }
+
 .dashboard-btn {
     background-color: #FFA500; /* Cambia el color de fondo del botón */
     color: #fff; /* Cambia el color del texto del botón */
@@ -118,7 +123,5 @@ border-radius: 5px;
 }
 
 .dashboard-btn:hover {
-    
-  
-background-color: #FF8C00; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+    background-color: #FF8C00; /* Cambia el color de fondo al pasar el cursor sobre el botón */
 }

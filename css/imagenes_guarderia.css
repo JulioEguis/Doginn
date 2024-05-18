@@ -5,6 +5,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    max-width: 1200px; /* Limitar el ancho del contenedor principal */
+    margin: 0 auto; /* Centrar el contenedor */
 }
 
 /* Estilo para el título de la página */
@@ -14,16 +16,16 @@ h2 {
     margin-bottom: 50px; /* Espacio inferior */
 }
 
-
 /* Estilos para cada guardería */
 .guarderia {
-    border: 2px solid #007bff; /* Borde azul */
-    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #007bff; /* Cambiar el grosor del borde a 1px */
+    border-radius: 10px; /* Mantener los bordes redondeados */
     margin-bottom: 20px;
     padding: 20px;
-    width: calc(33% - 40px); /* Ancho con margen */
+    width: calc(25% - 40px); /* Reducir el ancho al 25% y ajustar el margen */
     text-align: center; /* Centrar contenido */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Mantener la sombra */
+    position: relative; /* Mantener la posición relativa */
 }
 
 /* Estilos para la imagen representativa de la guardería */
@@ -38,6 +40,15 @@ h2 {
 .imagenes-adicionales {
     display: none;
     margin-top: 10px;
+}
+
+/* Estilos para el contenedor de las imágenes adicionales */
+.imagenes-adicionales img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Ajustar al tamaño máximo del cuadro azul */
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espacio entre imágenes */
 }
 
 /* Estilos para el botón "Más Imágenes" */
@@ -62,6 +73,7 @@ h2 {
     margin: 0 auto 20px; /* Centrar y agregar espacio abajo */
     width: 200px; /* Tamaño del logo */
 }
+
 .btn-cerrar-sesion {
     position: absolute;
     top: 20px;
@@ -75,3 +87,55 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Establecer la capa más arriba */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9); /* Fondo oscuro */
+  }
+  
+  /* Estilos para la imagen dentro del modal */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Ancho de la imagen dentro del modal */
+    max-width: 700px; /* Ancho máximo */
+    max-height: 80%; /* Altura máxima */
+  }
+  
+  /* Estilos para el botón de cierre del modal */
+  .close {
+    color: #fff; /* Color del texto */
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn-hacer-reserva {
+    margin-top: 10px;
+    margin: 10px auto; /* Centrar horizontalmente */
+    cursor: pointer;
+    background-color: #a665ba; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave */
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Quitar subrayado del enlace */
+    font-size: 11px; /* Tamaño de la fuente */
+    width: 90px; /* Ajustar el ancho del botón */
+}
+
+.btn-hacer-reserva:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
