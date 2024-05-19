@@ -32,54 +32,12 @@ $stmt_fechas->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar Disponibilidad</title>
     <link rel="stylesheet" type="text/css" href="css/calendario.css">
-    <style>
-        .titulo {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .btn-guardar {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .calendario td {
-            padding: 5px;
-        }
-        .calendario .disponible {
-            background-color: #4caf50;
-            color: white;
-        }
-        .calendario .no-disponible {
-            background-color: #f44336;
-            color: white;
-        }
-
-        .btn-volver-apanel {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #4c6fb1;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 <a href="dashboard1.php" class="btn-volver-apanel">Volver al panel</a>
-    <div class="titulo">Calendario de Disponibilidad 2024</div>
     <div class="calendario-container">
+        <div class="titulo">Calendario de Disponibilidad 2024</div>
         <table class="calendario">
             <thead>
                 <tr>

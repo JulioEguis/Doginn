@@ -1,24 +1,47 @@
+/* Estilos para centrar el contenido de la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el contenido al inicio superior */
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
 .calendario-container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 100%; /* Permitir que el contenedor ocupe todo el ancho disponible */
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .calendario {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
+    margin: 0 auto; /* Centrar la tabla */
 }
 
 .calendario th,
 .calendario td {
-    padding: 10px;
+    padding: 5px;
+    border: 1px solid #ccc; /* Añadir borde para visualizar las celdas */
+    text-align: center; /* Asegurar que el contenido esté centrado */
 }
 
 .dia {
     width: 30px;
     height: 30px;
-    border: 1px solid #ccc;
     cursor: pointer;
+    display: inline-block; /* Asegurar que los botones no se desborden */
+    text-align: center; /* Asegurar que el texto esté centrado */
+    line-height: 30px; /* Centrar verticalmente el texto */
+    border-radius: 4px; /* Bordes redondeados */
 }
 
 .dia:hover {
@@ -26,15 +49,18 @@
 }
 
 .dia.disponible {
-    background-color: #c3e6cb;
+    background-color: #4caf50;
+    color: white;
 }
 
 .dia.no-disponible {
-    background-color: #f5c6cb;
+    background-color: #f44336;
+    color: white;
 }
 
 .leyenda {
     margin-top: 20px;
+    text-align: center;
 }
 
 .leyenda span {
@@ -45,9 +71,130 @@
 }
 
 .leyenda-disponible {
-    background-color: #c3e6cb;
+    background-color: #4caf50;
 }
 
 .leyenda-no-disponible {
-    background-color: #f5c6cb;
+    background-color: #f44336;
+}
+
+.btn-volver-apanel {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-guardar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff; /* Fondo azul */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-guardar:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .calendario-container {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .btn-volver-apanel {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .btn-guardar {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .calendario th,
+    .calendario td {
+        padding: 3px;
+    }
+
+    .dia {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .btn-volver-apanel,
+    .btn-guardar {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .titulo {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendario th,
+    .calendario td {
+        padding: 2px;
+    }
+
+    .dia {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .btn-volver-apanel,
+    .btn-guardar {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .titulo {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .calendario th,
+    .calendario td {
+        padding: 1px;
+    }
+
+    .dia {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+    }
+
+    .btn-volver-apanel,
+    .btn-guardar {
+        font-size: 8px;
+        padding: 2px 4px;
+    }
+
+    .titulo {
+        font-size: 14px;
+    }
 }

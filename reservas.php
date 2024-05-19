@@ -92,9 +92,28 @@
                 // Obtener las imágenes adicionales de la guardería
                 const imagenesAdicionales = guarderia.querySelector('.imagenes-adicionales');
                 // Alternar la visibilidad de las imágenes adicionales
-                imagenesAdicionales.style.display = imagenesAdicionales.style.display === 'none' ? 'block' : 'none';
-                // Cambiar el texto del botón
-                boton.textContent = imagenesAdicionales.style.display === 'none' ? 'Más Imágenes' : 'Menos Imágenes';
+                const mostrandoMasImagenes = imagenesAdicionales.style.display === 'block';
+
+                // Ocultar todas las secciones de imágenes adicionales
+                document.querySelectorAll('.imagenes-adicionales').forEach(imagenes => {
+                    imagenes.style.display = 'none';
+                    imagenes.parentElement.classList.remove('expandido'); // Remover la clase expandido
+                });
+
+                // Cambiar el texto de todos los botones a "Más Imágenes"
+                document.querySelectorAll('.btn-mas-imagenes').forEach(btn => {
+                    btn.textContent = 'Más Imágenes';
+                });
+
+                // Mostrar u ocultar la sección de imágenes adicionales según corresponda
+                if (mostrandoMasImagenes) {
+                    imagenesAdicionales.style.display = 'none';
+                    boton.textContent = 'Más Imágenes';
+                } else {
+                    imagenesAdicionales.style.display = 'block';
+                    boton.textContent = 'Menos Imágenes';
+                    guarderia.classList.add('expandido'); // Añadir la clase expandido
+                }
             });
         });
 

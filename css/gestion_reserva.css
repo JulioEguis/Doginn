@@ -35,6 +35,18 @@ body {
     font-size: 16px;
 }
 
+.boton-enviar-reserva {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
 .btn-volver:hover {
     background-color: #3b5998;
 }
@@ -80,22 +92,8 @@ input[type="date"] {
     box-sizing: border-box;
 }
 
-.btn-hacer-reserva {
-    margin-top: 10px;
-    margin: 10px auto; /* Centrar horizontalmente */
-    cursor: pointer;
-    background-color: #a665ba; /* Fondo azul */
-    color: #fff; /* Texto blanco */
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease; /* Transición suave */
-    display: block;
-    text-align: center;
-    text-decoration: none; /* Quitar subrayado del enlace */
-    font-size: 11px; /* Tamaño de la fuente */
-    width: 90px; /* Ajustar el ancho del botón */
-}
+
+
 
 .btn-hacer-reserva:hover {
     background-color: #0056b3; /* Cambio de color al pasar el mouse */

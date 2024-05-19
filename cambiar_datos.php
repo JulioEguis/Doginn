@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE guarderias SET nombre_guarderia = '$nombre_guarderia', direccion = '$direccion', telefono = '$telefono', correo_electronico = '$correo_electronico' WHERE id_guarderia = $id_guarderia";
 
     if ($conexion->query($sql) === TRUE) {
-        echo "Los datos se han actualizado correctamente.";
+      
     } else {
         echo "Error al actualizar los datos: " . $conexion->error;
     }
@@ -96,6 +96,8 @@ $conexion->close();
     function mostrarMensaje(mensaje) {
         // Asignar el mensaje al contenido del elemento
         mensajeElemento.textContent = mensaje;
+         // Cambiar el color del texto a verde
+         mensajeElemento.style.color = "green";
         // Mostrar el mensaje estableciendo la visibilidad del elemento
         mensajeElemento.style.display = "block";
         // Desaparecer el mensaje después de 6 segundos
