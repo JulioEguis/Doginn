@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url(../img/fondo4.jpeg);
+    background-size: contain; /* Ajusta el tamaño de la imagen para que quepa en el contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.logo {
+    max-width: 70%; /* Establece el ancho máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin:  auto;
+    margin-top: 15%;
+    padding: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+    text-align: center;
+}
+
+.container h2 {
+    color: #3ab738;
+    font-size: 24px;
+    margin-bottom: 2%;
+}
+
+.container p {
+    margin-bottom: 20px;
+    
+    font-size: 18px; 
+}
+
+ul {
+    text-align: left;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btn-continuar, .btn-rechazar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.btn-continuar {
+    background-color: #6495ED;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-rechazar {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-continuar:hover {
+    background-color: #4f539d;
+}
+
+.btn-rechazar:hover {
+    background-color: #e53935;
+}
+
+.mensaje-recordatorio {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto 0; /* Ajustar margen superior a 10px y quitar margen inferior */
+    padding: 10px;
+    background-color: white; /* Fondo rojo claro */
+    border: 2px solid red; /* Borde rojo */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mensaje-recordatorio p {
+    color: #333;
+    font-size: 16px;
+    text-align: justify;
+}
