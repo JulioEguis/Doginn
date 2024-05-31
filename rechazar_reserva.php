@@ -17,6 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reserva_id'])) {
 }
 
 // Redirigir de vuelta a la página de gestión de reservas
-header("Location: gestion_reservas.php");
+header("Location: gestion_reserva.php");
 exit();
 ?>

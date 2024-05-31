@@ -12,27 +12,31 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $id_usuario = $_SESSION['id_usuario'];
 
-// Obtener las reservas del usuario desde la base de datos
-$reservas = [];
-$query = "SELECT r.fecha_inicio, r.fecha_fin, r.raza_perro, r.nombre_guarderia
-          FROM reservas r 
-          WHERE r.id_usuario = ?";
-$stmt = $conexion->prepare($query);
-if ($stmt) {
-    $stmt->bind_param("i", $id_usuario);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    while ($fila = $resultado->fetch_assoc()) {
-        $reservas[] = $fila;
+// Función para obtener las reservas del usuario
+function obtenerReservasUsuario($conexion, $id_usuario) {
+    $reservas = [];
+    $query = "SELECT r.fecha_inicio, r.fecha_fin, r.raza_perro, r.nombre_guarderia
+              FROM reservas r 
+              WHERE r.id_usuario = ?";
+    $stmt = $conexion->prepare($query);
+    if ($stmt) {
+        $stmt->bind_param("i", $id_usuario);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        while ($fila = $resultado->fetch_assoc()) {
+            $reservas[] = $fila;
+        }
+        $stmt->close();
+    } else {
+        error_log("Error en la preparación de la consulta: " . $conexion->error);
+        echo "Error en la preparación de la consulta.";
+        return null;
     }
-    $stmt->close();
-} else {
-    // Error en la preparación de la consulta
-    error_log("Error en la preparación de la consulta: " . $conexion->error);
-    echo "Error en la preparación de la consulta.";
-    exit();
+    return $reservas;
 }
 
+// Obtener reservas
+$reservas = obtenerReservasUsuario($conexion, $id_usuario);
 $conexion->close();
 ?>
 
@@ -45,7 +49,6 @@ $conexion->close();
     <link rel="stylesheet" href="css/reservas_usuario.css">
     <link rel="icon" href="img/faviusuario.png" type="image/x-icon">
 </head>
-<body>
 <body>
     <div class="logo-container">
         <img src="img/tenor.gif" alt="Logo de la guardería" class="logo">
