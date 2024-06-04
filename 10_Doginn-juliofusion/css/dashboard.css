@@ -1,0 +1,55 @@
+/* Estilos para el dashboard */
+.container {
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo según tus preferencias */
+    margin: 20px auto; /* Ajusta el margen superior e inferior según tus preferencias */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+/* Estilo para el nombre de la guardería */
+.nombre-guarderia {
+    font-size: 40px; /* Aumentar tamaño de fuente */
+    color: #121294; /* Azul más oscuro */
+}
+.btn-administracion {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4c6fb1; /* Cambia el color de fondo al deseado */
+    color: white; /* El texto será blanco */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn-administracion:hover {
+    background-color: #375489; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.btn-cerrar-sesion {
+    position: absolute;
+    top: 20px;
+    right: 300px; /* Cambia 'right' a 'left' y ajusta la distancia desde el borde izquierdo */
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #e0e0e0;
+}
+

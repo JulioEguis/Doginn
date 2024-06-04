@@ -1,0 +1,121 @@
+body {
+    padding-top: 70px; /* Ajusta este valor según la altura del header */
+    padding-bottom: 50px; /* Espacio para el footer */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.buscadorbody {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#searchForm {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px; /* Incrementado el ancho máximo en un 40% */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+.buscadorinput-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.buscadorlabel {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.buscadorinput-with-icon {
+    position: relative;
+}
+
+.buscadorinput {
+    padding: 5px 10px;
+    padding-left: 30px; /* Añadir espacio para el icono */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 12px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+.buscadorimg {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+}
+
+.buscadorbutton {
+    background-color: #5986d9;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Espacio entre el botón y los inputs */
+    font-size: 14px;
+    flex-shrink: 0; /* Evita que el botón se reduzca */
+}
+
+.buscadorbutton:hover {
+    background-color: #4a76c4;
+}
+
+/* Boton reservar guarderias filtradas*/
+.reservar-button {
+    background-color: #5986d9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.reservar-button:hover {
+    background-color: #476bb5;
+}
+
+/* Boton volver final pagina */
+.volver-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.volver-button {
+    background-color: #5986d9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.volver-button:hover {
+    background-color: #4a76c4;
+}
+
+.container {
+    margin-top: 40px; /* Asegura el mismo margen entre el buscador y los resultados */
+}

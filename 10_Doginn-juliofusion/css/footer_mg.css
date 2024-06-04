@@ -1,0 +1,68 @@
+footer {
+    background-color: #5986d9;
+    color: #ffffff;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Cambiado a relative para que sea estático */
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+footer .left, footer .center, footer .right {
+    flex: 1;
+}
+
+footer .left {
+    text-align: left;
+}
+
+footer .center {
+    text-align: center;
+}
+
+footer .right {
+    text-align: right;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.volver-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.volver-button {
+    background-color: #5986d9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.volver-button:hover {
+    background-color: #4a76c4;
+}
+
