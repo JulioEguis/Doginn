@@ -461,6 +461,8 @@ header {
     background-color: #f0f9ff; /* Color de fondo de la sección */
     box-shadow: 0 5px 20px rgba(0, 106, 255, 0.463); /* Sombra sutil para la sección */
     margin-top: auto;
+    margin: auto;
+    margin-bottom: 5%;
 }
 
 /* Título de la sección informativa */
@@ -500,15 +502,15 @@ header {
 
 .info-item-titulo {
     color: #6495ED; /* Color azul */
-    font-size: 24px; /* Tamaño del título */
+    font-size: 26px; /* Tamaño del título */
     margin-bottom: 10px; /* Espacio inferior */
 }
 
 /* Estilos del texto descriptivo */
 .info-item-descripcion {
     color: #000000; /* Color del texto */
-    font-size: 16px; /* Tamaño del texto */
-    margin: 0; /* Elimina el margen predeterminado */
+    font-size: 17px; /* Tamaño del texto */
+    margin: auto; /* Elimina el margen predeterminado */
 }
 
 /*-------------------------------------------------------------------------------*/
