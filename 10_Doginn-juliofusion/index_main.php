@@ -5,7 +5,6 @@ if (isset($_SESSION['usuario_nombre'])) {
     $saludo = "Hola " . $_SESSION['usuario_nombre'];
     $logged_in = true;
 } else {
-    // si no hay nombre de usuario, la variable $saludo se establece en una cadena vacía
     $saludo = ""; // si no hay nombre de usuario, la variable $saludo se establece en una cadena vacía
     $logged_in = false;
 }
@@ -51,7 +50,6 @@ if (isset($_SESSION['usuario_nombre'])) {
 
     <script src="js/Carousel/carousel.js"></script>
 
-
     <style>
         <?php if ($logged_in): ?>
         .loginbotones.logged-in {
@@ -60,128 +58,141 @@ if (isset($_SESSION['usuario_nombre'])) {
         }
         <?php endif; ?>
     </style>
-
-
-
-
-
-    
 </head>
 <body>
 
-    <header>
-        <!-- Botones de inicio, registro, pon tu guarderia -->
-        <div class="botones-container">
-            <?php if (!$logged_in): ?>
-                <a href="guarderia_registro.html" class="loginbotones" style="text-align: center;">Registra tu Guardería</a>
-                <a href="login_guarderia.php" class="loginbotones" style="text-align: center;">Accede a tu Guardería</a>
-                <a href="registro.php" class="loginbotones" style="text-align: center;">Regístrate</a>
-                <a href="login.php" class="loginbotones" style="text-align: center;">Iniciar Sesión</a>
-            <?php else: ?>
-                <a class="loginbotones logged-in" style="text-align: center;"><?php echo $saludo; ?></a>
-                <a href="mis_reservas.php" class="loginbotones" style="text-align: center;">Mis Reservas</a>
-                <a href="logout_usuario.php" class="loginbotones" style="text-align: center;">Cerrar sesión</a>
-            <?php endif; ?>
-        </div>
+<header>
+    <video autoplay muted loop class="video-header">
+        <source src="video/correperro.mp4" type="video/mp4">
+        Tu navegador no admite la etiqueta de video.
+    </video>
+    <img src="img/logodoginn.png" alt="Logo de la página" class="logo">
 
-        <video autoplay muted loop class="video-header">
-            <source src="video/correperro.mp4" type="video/mp4">
-            Tu navegador no admite la etiqueta de video.
-        </video>
-        <img src="img/logodoginn.png" alt="Logo de la página" class="logo">
-
-        <!-- Botón azul -->
-        <a href="reservas.php" class="button-header blue" style="left: 20%;">Guarderías</a>
+    <!-- Contenedor centrado de enlaces -->
+    <div class="botones-container">
+        <!-- Enlace a Guarderías -->
+        <a href="reservas.php" class="enlace-header">
+            <img src="img/home_and.png" alt="Icono de Guarderías"> <!-- Añade la ruta correcta al ícono -->
+            Guarderías
+        </a>
         
-        <!-- Botón transparente -->
-        <a href="blog_index.php" class="button-header transparent" style="left: 80%;">Nosotros</a>
+        <!-- Enlace a Nosotros -->
+        <a href="blog_index.php" class="enlace-header">
+            <img src="img/dogicon.png" alt="Icono de Nosotros"> <!-- Añade la ruta correcta al ícono -->
+            Nosotros
+        </a>
 
-    </header>
+        <?php if (!$logged_in): ?>
+            <a href="guarderia_registro.html" class="enlace-header">
+                <img src="img/registraguarde.png" alt="Icono de Registro"> <!-- Añade la ruta correcta al ícono -->
+                Registra tu Guardería
+            </a>
+            <a href="login_guarderia.php" class="enlace-header">
+                <img src="img/accesoguarde.png" alt="Icono de Acceso Guardería"> <!-- Añade la ruta correcta al ícono -->
+                Accede a tu Guardería
+            </a>
+            <a href="registro.php" class="enlace-header">
+                <img src="img/iconregistro.png" alt="Icono de Registro"> <!-- Añade la ruta correcta al ícono -->
+                Regístrate
+            </a>
+            <a href="login.php" class="enlace-header">
+                <img src="img/login_24.png" alt="Icono de Iniciar Sesión"> <!-- Añade la ruta correcta al ícono -->
+                Iniciar Sesión
+            </a>
+        <?php else: ?>
+            <a class="enlace-header">
+                <img src="img/icons/usuario-icon.png" alt="Icono de Usuario"> <!-- Añade la ruta correcta al ícono -->
+                <?php echo $saludo; ?>
+            </a>
+            <a href="mis_reservas.php" class="enlace-header">
+                <img src="img/icons/reservas-icon.png" alt="Icono de Reservas"> <!-- Añade la ruta correcta al ícono -->
+                Mis Reservas
+            </a>
+            <a href="logout_usuario.php" class="enlace-header">
+                <img src="img/icons/logout-icon.png" alt="Icono de Cerrar Sesión"> <!-- Añade la ruta correcta al ícono -->
+                Cerrar sesión
+            </a>
+        <?php endif; ?>
+    </div>
+</header>
 
-<!--
-    Este bloque de código representa un formulario de búsqueda.
-    Contiene campos para ingresar la ubicación, la fecha de entrada,
-    la fecha de salida y el número de perros. Cuenta con una funcion de autorrellenado 
-    de js. Archivo jquery-3.7.1.min.js
--->
 
-<div class="buscadorbody">
-    <form id="searchForm" class="buscadorhorizontal-form" action="buscar_guarderias.php" method="post">
-        
-        <!-- Campo de entrada para la ubicación -->
-        <div class="buscadorinput-container">
-            <label class="buscadorlabel" for="location" style="text-align: center;">Ubicación</label>
-            <div class="buscadorinput-with-icon">
-                <input class="buscadorinput" type="text" id="location" name="location" required>
-                <img class="buscadorimg" src="img/logos buscador/ubicacion.png" alt="Icono de ubicación">
+
+
+    <!-- Formulario de búsqueda -->
+    <div class="buscadorbody">
+        <form id="searchForm" class="buscadorhorizontal-form" action="buscar_guarderias.php" method="post">
+            <div class="buscadorinput-container">
+                <label class="buscadorlabel" for="location" style="text-align: center;">Ubicación</label>
+                <div class="buscadorinput-with-icon">
+                    <input class="buscadorinput" type="text" id="location" name="location" required>
+                    <img class="buscadorimg" src="img/logos buscador/ubicacion.png" alt="Icono de ubicación">
+                </div>
             </div>
-        </div>
-        
-        <!-- Campo de entrada para la fecha de entrada -->
-        <div class="buscadorinput-container">
-            <label class="buscadorlabel" for="checkIn" style="text-align: center;">Fecha de entrada</label>
-            <div class="buscadorinput-with-icon">
-                <input class="buscadorinput" type="date" id="checkIn" name="checkIn">
-                <img class="buscadorimg" src="img/logos buscador/calendario.jpg" alt="Icono de calendario">
+            <div class="buscadorinput-container">
+                <label class="buscadorlabel" for="checkIn" style="text-align: center;">Fecha de entrada</label>
+                <div class="buscadorinput-with-icon">
+                    <input class="buscadorinput" type="date" id="checkIn" name="checkIn">
+                    <img class="buscadorimg" src="img/logos buscador/calendario.jpg" alt="Icono de calendario">
+                </div>
             </div>
-        </div>
-        
-        <!-- Campo de entrada para la fecha de salida -->
-        <div class="buscadorinput-container">
-            <label class="buscadorlabel" for="checkOut" style="text-align: center;">Fecha de salida</label>
-            <div class="buscadorinput-with-icon">
-                <input class="buscadorinput" type="date" id="checkOut" name="checkOut">
-                <img class="buscadorimg" src="img/logos buscador/calendario.jpg" alt="Icono de calendario">
+            <div class="buscadorinput-container">
+                <label class="buscadorlabel" for="checkOut" style="text-align: center;">Fecha de salida</label>
+                <div class="buscadorinput-with-icon">
+                    <input class="buscadorinput" type="date" id="checkOut" name="checkOut">
+                    <img class="buscadorimg" src="img/logos buscador/calendario.jpg" alt="Icono de calendario">
+                </div>
             </div>
-        </div>
-        
-        <!-- Campo de entrada para el número de perros -->
-        <div class="buscadorinput-container">
-            <label class="buscadorlabel" for="numDogs" style="text-align: center;">Número de perros</label>
-            <div class="buscadorinput-with-icon">
-                <input class="buscadorinput" type="number" id="numDogs" name="numDogs" min="1" value="1">
-                <img class="buscadorimg" src="img/logos buscador/Nperros.jpg" alt="Icono de perro">
+            <div class="buscadorinput-container">
+                <label class="buscadorlabel" for="numDogs" style="text-align: center;">Número de perros</label>
+                <div class="buscadorinput-with-icon">
+                    <input class="buscadorinput" type="number" id="numDogs" name="numDogs" min="1" value="1">
+                    <img class="buscadorimg" src="img/logos buscador/Nperros.jpg" alt="Icono de perro">
+                </div>
             </div>
-        </div>
-        
-        <!-- Botón para enviar el formulario de búsqueda -->
-        <button class="buscadorbutton" type="submit">Buscar</button>
-    </form>
-</div>
+            <button class="buscadorbutton" type="submit">Buscar</button>
+        </form>
+    </div>
 
-<!--
-    Este bloque de código son las guarderias mas populares junto con imagenes y botones.
--->
-<p class="destinos-espana">Guarderías más populares</p>
+    <!-- Guarderías más populares -->
+    <p class="destinos-espana">Guarderías más populares</p>
 
-<div class="inicio-contenedor-guarderias">
+    <div class="inicio-contenedor-guarderias">
     <?php
     // Incluir el archivo de conexión a la base de datos
     include 'includes/conexion.php';
 
-    // Consulta SQL para obtener los datos de la tabla guarderias, limitando a 3 resultados
-    $sql = "SELECT g.id_guarderia, g.nombre_guarderia, ig.imagen_url
-            FROM guarderias g
-            LEFT JOIN imagenes_guarderia ig ON g.id_guarderia = ig.id_guarderia
-            GROUP BY g.id_guarderia
-            LIMIT 3";
+    // Consulta SQL para obtener los datos de la tabla guarderias
+    $sql = "
+    SELECT g.*, MIN(cd.precio_noche) AS precio_minimo, ig.imagen_url 
+    FROM guarderias g
+    LEFT JOIN calendarios_disponibilidad cd ON g.id_guarderia = cd.id_guarderia
+    LEFT JOIN imagenes_guarderia ig ON g.id_guarderia = ig.id_guarderia
+    GROUP BY g.id_guarderia
+";
     $result = $conexion->query($sql);
 
     // Verifica si hay resultados
     if ($result->num_rows > 0) {
         // Itera sobre los resultados y muestra cada guardería
         while ($row = $result->fetch_assoc()) {
+            echo "<div class='guarderia-contenedor'>";
             echo "<div class='inicio-guarderia'>";
             if ($row['imagen_url']) {
-                // Envolver la imagen en un enlace con la URL deseada
-                // Asegúrate de que la ruta de la imagen sea correcta
                 $imagePath = $row['imagen_url'];
                 echo "<a href='gestion_reserva.php?id_guarderia=" . $row['id_guarderia'] . "'>";
                 echo "<img src='" . $imagePath . "' alt='Imagen de la guardería' class='inicio-imagen-guarderia'>";
                 echo "</a>";
             }
+            echo "</div>"; // Cierra el div de la imagen de guardería
+            // Información de la guardería
+            echo "<div class='info-guarderia'>";
             echo "<h3 class='inicio-nombre-guarderia'>" . $row['nombre_guarderia'] . "</h3>";
-            echo "</div>"; // Cierra el div de guardería
+            echo "<p class='inicio-direccion'>" . $row['direccion'] . "</p>";
+            echo "<p class='inicio-precio'>Precio por noche: " . number_format($row['precio_minimo'], 2) . " €</p>";
+            echo "<p class='inicio-puntuacion'><span class='estrella'>★</span> " . number_format($row['puntuacion'], 2) . "</p>";
+            echo "</div>"; // Cierra el div de información de guardería
+            echo "</div>"; // Cierra el div de guarderia-contenedor
         }
     } else {
         echo "No se encontraron resultados.";
@@ -192,17 +203,15 @@ if (isset($_SESSION['usuario_nombre'])) {
     ?>
 </div>
 
-<!--
-    Este bloque de código es la descripcion de compromiso y cuidado
--->
-<section class="info-section">
+    <!-- Sección Informativa -->
+    <section class="info-section">
         <h1 class="info-section-titulo">Sección Informativa</h1>
         <div class="info-grid">
             <div class="info-item">
                 <img src="img/Cuidadocompromiso/perroespalda.jpg" alt="Descripción de la imagen" class="info-item-image">
                 <div class="info-item-text">
                     <h2 class="info-item-titulo">Cuidado</h2>
-                    <p class="info-item-descripcion">En DoGinn, nos preocupamos profundamente por la salud y 
+                    <p class="info-item-descripcion">En Doginn, nos preocupamos profundamente por la salud y 
                     felicidad de los perros. Creemos que cada perro merece jugar, alimentarse 
                     bien y tener suficiente espacio para vivir cómodamente.</p>
                 </div>
@@ -232,31 +241,25 @@ if (isset($_SESSION['usuario_nombre'])) {
         </div>
     </section>
 
-<footer class="footer">
-    <!-- Contenedor para los íconos de redes sociales -->
-    <div class="social-icons">
-        <!-- Enlace a Instagram -->
-        <a href="https://www.instagram.com"><img src="img/RedesSociales/Instagram_logo_2016.svg.png" alt="Instagram"></a>
-        <!-- Enlace a Twitter -->
-        <a href="https://x.com/DoginnES"><img src="img/RedesSociales/twitter-x.png" alt="Twitter"></a>
-        <!-- Enlace a Facebook -->
-        <a href="https://www.facebook.com/profile.php?id=61560149064324"><img src="img/RedesSociales/2023_Facebook_icon.svg.png" alt="Facebook"></a>
-    </div>
+    <footer class="footer">
+        <!-- Contenedor para los íconos de redes sociales -->
+        <div class="social-icons">
+            <!-- Enlace a Instagram -->
+            <a href="https://www.instagram.com"><img src="img/RedesSociales/Instagram_logo_2016.svg.png" alt="Instagram"></a>
+            <!-- Enlace a Twitter -->
+            <a href="https://x.com/DoginnES"><img src="img/RedesSociales/twitter-x.png" alt="Twitter"></a>
+            <!-- Enlace a Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61560149064324"><img src="img/RedesSociales/2023_Facebook_icon.svg.png" alt="Facebook"></a>
+        </div>
 
-    <!-- Contenedor para los enlaces del footer -->
-    <div class="footer-links">
-        <!-- Enlace a la página de Guarderías -->
-        <a href="reservas.php">Guarderías</a>
-        <!-- Enlace a la página Nosotros -->
-        <a href="nosotros.html">Nosotros</a>
-        <!-- Enlace a la página de Inicio de Sesión -->
-        <a href="login.php">Inicio Sesión</a>
-        <!-- Enlace a la página de Registro -->
-        <a href="registro.php">Registrarse</a>
-        <!-- Enlace a la página de Pon tu Guardería -->
-        <a href="guarderia_registro.html">Pon tu Guardería</a>
-    </div>
-</footer>
-
+        <!-- Contenedor para los enlaces del footer -->
+        <div class="footer-links">
+            <a href="reservas.php">Guarderías</a>
+            <a href="blog_index.php">Nosotros</a>
+            <a href="login.php">Inicio Sesión</a>
+            <a href="registro.php">Registrarse</a>
+            <a href="guarderia_registro.html">Pon tu Guardería</a>
+        </div>
+    </footer>
 </body>
 </html>

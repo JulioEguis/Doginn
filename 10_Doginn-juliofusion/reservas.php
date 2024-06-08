@@ -37,7 +37,7 @@ $result = $conexion->query($sql);
         <nav>
             <ul>
                 <li><a href="index_main.php">Home</a></li>
-                <li><a href="reservas.php">Guarderías</a></li>
+               <!-- <li><a href="reservas.php">Guarderías</a></li> -->
                 <li><a href="blog_index.php">Nosotros</a></li>
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Registra tu guardería</a>

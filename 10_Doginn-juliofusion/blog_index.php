@@ -19,7 +19,7 @@
             <!-- Logo doginn esquina superior izda. -->
             <div class="tm-site-header">
                 <a href="index_main.php">
-                    <div class="mb-3 mx-auto tm-site-logo"><img src="img/blog/logo_sf.png" width="150" height="150"></i></div><br> 
+                    <div class="mb-3 mx-auto tm-site-logo"><img src="img/logo-removebg-preview.png" width="150" height="150"></i></div><br> 
                 </a>              
                 <h1 class="text-center">SOBRE NOSOTROS</h1>
             </div>

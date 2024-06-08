@@ -58,18 +58,19 @@ input[type="email"], input[type="password"] {
     box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total del campo de entrada */
     border: 1px solid #ddd; /* Borde del campo de entrada */
     outline: none; /* Elimina el contorno predeterminado al hacer clic en el campo de entrada */
-    font-size: 14px; /* Tamaño de fuente del campo de entrada */
+    font-size: 18px; /* Tamaño de fuente del campo de entrada */
 }
 
 /* Estilos para el botón de tipo "submit" */
 button[type="submit"] {
-    background-color: #333; /* Color de fondo del botón */
+    background-color: #344eac; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
-    padding: 10px 20px; /* Añade espacio interno alrededor del contenido del botón */
+    padding: 3px 8px; /* Reduce aún más el espacio interno alrededor del contenido del botón */
     border: none; /* Elimina el borde del botón */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    font-size: 14px; /* Tamaño de fuente del botón */
+    font-size: 20px; /* Reduce el tamaño de la fuente del botón */
 }
+
 
 /* Estilos al pasar el ratón sobre el botón */
 button[type="submit"]:hover {

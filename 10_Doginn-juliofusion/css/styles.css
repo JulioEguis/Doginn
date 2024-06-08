@@ -2,167 +2,146 @@ body, html {
     margin: 0;
     padding: 0;
     height: fit-content;
-
 }
 
+.contenedor-principal {
+    max-width: 100%; /* Ajusta el ancho máximo */
+    margin: 0 auto;
+    padding: 20px;
+}
 
 header {
     position: relative;
-    height: 100vh; /* Ajusta la altura según tus necesidades */
+    height: 55vh; /* Reduce la altura según sea necesario */
     width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 55%;
-    object-fit: cover;
-    border-bottom: 3px solid #5986d9; /* Agrega una línea de borde azul debajo del video */
+    position: absolute;
+    top: 50%; /* Ajusta la posición vertical del video */
+    left: 50%; /* Centra horizontalmente el video */
+    width: 70%; /* Ajusta el ancho del video */
+    height: auto; /* Mantiene la proporción del video */
+    transform: translate(-50%, -60%); /* Ajusta la posición del video */
+    border-bottom: 3px solid #5986d9;
+    margin-top: 100px; /* Añade separación con el inicio de la página */
+    z-index: 1; /* Asegura que el video esté detrás */
 }
-
 
 /* Estilos de la imagen del logo */
 .logo {
     position: absolute;
-    top: 15%; /* Centramos verticalmente */
-    left: 50%; /* Centramos horizontalmente */
-    transform: translate(-50%, -50%); /* Centramos absolutamente */
-    z-index: 1; /* Aseguramos que esté sobre el video */
-    max-width: 500px; /* Ajusta el ancho máximo según sea necesario */
+    top: 30%; /* Ajusta para centrar verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    max-width: 50%; /* Ajusta el ancho máximo según sea necesario */
 }
 
-
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------BOTONES INICIO SESION, REGISTRO, PON TU GUARDERIA--------------------*/
-
-.loginbotones {
-    font-family: "ADLaM Display", sans-serif;
-    background-color: #6495ED;
-    color: white;
-    border: 2px solid ; /* Añadimos un borde transparente */
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: border-color 0.3s ease-in-out;
-    margin-bottom: 10px; /* Añadimos margen entre los botones */
-    display: block; /* Cambiamos la visualización a bloque */
-    text-decoration: none; /* Eliminamos el subrayado de los enlaces */
-}
-
-.loginbotones:hover {
-    border-color: white; /* Cambiamos el color del borde al pasar el ratón */
-    background-color: #4c6fb1;
-}
-
+/* Botones del header */
+/* Contenedor de botones centrado y alineado horizontalmente */
+/* Contenedor de botones centrado y alineado horizontalmente */
 .botones-container {
     position: absolute;
-    top: 4%; /* Ajusta según sea necesario */
-    left: 85%; /* Ajusta para alinear a la derecha */
-    z-index: 1; /* Para asegurar que estén sobre el video */
+    top: 60%; /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+    z-index: 3; /* Asegura que los botones estén delante del video */
+    justify-content: center;
 }
 
+/* Estilos de los enlaces con íconos */
+.enlace-header {
+    font-family: "ADLaM Display";
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    transition: color 0.3s;
+}
 
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------BOTONES HEADER--------------------*/
+.enlace-header img {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: auto;
+}
+
+.enlace-header:hover {
+    color: #6495ED; /* Cambia el color del texto al pasar el ratón */
+}
 
 
 /* Estilos de los botones */
-.button-header {
-    font-family: "ADLaM Display"; /* Fuente de letra ADLaM Display */
-    position: absolute;
-    top: 35%;
-    border: 3px solid white; /* Reborde blanco */
-    border-radius: 30px; /* Esquinas redondeadas */
-    color: white; /* Color de letra blanco */
+.button-header, .loginbotones {
+    font-family: "ADLaM Display";
+    border: 3px solid white;
+    border-radius: 30px;
+    color: white;
     text-decoration: none;
     padding: 15px 20px;
     font-size: 16px;
-    transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar el color de fondo y el color del texto */
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 3; /* Asegura que los botones estén delante del video */
 }
 
-.button-header.blue {
-    left: 45%; /* Ajusta la posición del botón azul */
-    transform: translateX(230%); /* Ajusta la posición horizontal del boton */
-    background-color: #6495ED; /* Cambia el color del botón azul a una tonalidad más clara */
+.button-header.blue, .loginbotones.logged-in {
+    background-color: #6495ED;
 }
 
-.button-header.transparent {
-    left: 55%; /* Ajusta la posición del botón transparente */
-    transform: translateX(-400%);  /* Ajusta la posición horizontal del boton */
+.button-header.transparent, .loginbotones {
     background-color: transparent;
+    border: 2px solid #6495ED;
+    color: #6495ED;
 }
 
-.button-header.transparent:hover {
+.button-header.transparent:hover, .loginbotones:hover {
     background-color: white; /* Cambia el color de fondo al pasar el ratón */
     color: black; /* Cambia el color del texto al pasar el ratón */
 }
 
-.button-header.blue:hover {
+.button-header.blue:hover, .loginbotones:hover {
     border: 3px solid #6495ED; /* Reborde blanco */
     background-color: #6495ED; /* Cambia el color de fondo al pasar el ratón */
     color: rgb(255, 255, 255); /* Cambia el color del texto al pasar el ratón */
 }
 
-/* Estilos del título azul */
+
+/* Títulos */
 .titulosazul {
-    font-family: "ADLaM Display"; /* Fuente de letra ADLaM Display */
-    color: #6495ED; /* Color azul */
-    font-size: 56px; /* Tamaño grande */
-    text-align: center; /* Centrado */
-    margin: 10; /* Elimina cualquier margen */
-    padding: 20px 0; /* Añade espaciado interno */
-    position: absolute; /* Posiciona de forma absoluta */
-    top: 55%; /* Coloca el título justo después del video */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Centra completamente */
+    font-family: "ADLaM Display";
+    color: #6495ED;
+    font-size: 56px;
+    text-align: center;
+    margin: 10px 0;
+    padding: 20px 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.destinos-populares {
-    font-family: "ADLaM Display"; /* Fuente de letra ADLaM Display */
-    color: #6495ED; /* Color azul */
-    font-size: 46px; /* Tamaño grande */
-    position: absolute; /* Posiciona de forma absoluta */
-    top: 120%; /* Coloca el título justo después del video */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Centra completamente */
+.destinos-populares, .destinos-espana {
+    font-family: "ADLaM Display";
+    color: #6495ED;
+    font-size: 46px;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .destinos-espana {
-    font-family: "ADLaM Display"; /* Fuente de letra ADLaM Display */
-    color: #6495ED; /* Color azul */
-    font-size: 46px; /* Tamaño grande */
-    position: absolute; /* Posiciona de forma absoluta */
-    top: 68%; /* Coloca el título justo después del video */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Centra completamente */
+    top: 65%;
 }
 
-
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------BUSCADOR--------------------*/
-
-/* Estilos del formulario de búsqueda */
+/* Buscador */
 .buscadorbody {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -172,31 +151,30 @@ header {
 
 .buscadorhorizontal-form {
     position: absolute;
-    top: 57%; /* Ajusta la posición vertical del formulario */
-    left: 50%; /* Centra horizontalmente el formulario */
+    top: 60%; /* Ajusta la posición vertical para mover el buscador más abajo */
+    left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1000px; /* Ajusta el ancho máximo del formulario */
-    width: 90%; /* Ajusta el ancho del formulario */
+    max-width: 1000px;
+    width: 90%;
     padding: 20px;
     background-color: #f8f8f8;
-    border: 3px solid #6494ed5b; /* Reborde blanco */
+    border: 3px solid #6494ed5b;
     border-radius: 40px;
     box-shadow: 0px 0px 10px 0px rgba(0, 64, 255, 0.659);
+    z-index: 2; /* Asegura que el buscador esté por encima del video */
 }
+
 .buscadorinput-container {
     flex: 1;
-    margin-right: 20px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin: 5px;
     position: relative;
 }
 
-
 .buscadorlabel {
-    font-family: "ADLaM Display"; /* Establece la fuente de la página */
+    font-family: "ADLaM Display";
     display: block;
     margin-bottom: 5px;
     color: #6495ED;
@@ -211,83 +189,63 @@ header {
 .buscadorinput[type="text"],
 .buscadorinput[type="date"],
 .buscadorinput[type="number"] {
-    width: calc(100% - 50px); /* Ajusta el ancho del campo de entrada */
+    width: calc(100% - 50px);
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    padding-left: 40px; /* Ajusta el espacio a la izquierda para el icono */
+    padding-left: 40px;
 }
 
 .buscadorimg {
     position: absolute;
-    left: 10px; /* Posiciona el icono a la izquierda */
-    width: 30px; /* Ajusta el tamaño del icono */
+    left: 10px;
+    width: 30px;
     height: auto;
 }
 
 .buscadorbutton {
     flex: 1;
-    padding: 20px; 
-    border: none;
-    border-radius: 20px;
-    background-color: #488bff;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 15px 30px; /* Añade espacio interno alrededor del contenido del botón */
+    border: none; /* Elimina el borde predeterminado */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #6495ED; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-size: 20px; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
 }
 
 .buscadorbutton:hover {
-    background-color: #201ac9;
+    background-color: #4878d4; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+    border-color: #4878d4; /* Cambia el color del borde al pasar el ratón sobre el botón */
 }
 
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------Destinos Populares--------------------*/
 
+
+/* Destinos Populares */
 .populargaleria {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -170px; /* Ajusta el margen superior hacia arriba */
-    margin-bottom: 20px; /* Ajusta el margen inferior según sea necesario */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.boton-galeria {
-    display: inline-block;
-    width: 280px;
+.boton-galeria, .popularimg {
+    width: 100%;
+    max-width: 280px;
     height: 280px;
     margin: 30px;
     background-size: cover;
     background-position: center;
-    border-radius: 0px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s; 
-}
-
-.popularimg {
-    display: inline-block;
-    border-radius: 10px; /* Esquinas redondeadas */
-    margin: 30px; /* Margen entre las imágenes */
-    width: 280px; /* Tamaño pequeño */
-    height: 280px;
-    background-size: cover;
-    background-position: center;
-    height: auto; /* Mantenimiento de la proporción */
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.5s ease; /* Transición suave del zoom */
+    transition: transform 0.3s;
 }
 
 .popularimg:hover {
-    transform: scale(1.1); /* Zoom al pasar el ratón */
-
+    transform: scale(1.1);
 }
 
 .popularciudad {
@@ -302,270 +260,181 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------Destinos Populares--------------------*/
+/* Carrusel */
 .carousel-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin: 7% auto; /* Mueve el carrusel hacia abajo */
-    max-width: 1000px; /* Establece un ancho máximo */
+    margin: 7% auto;
+    max-width: 1000px;
 }
-
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
-    margin: 0 -10px; /* Margen negativo para compensar los márgenes de los slides */
+    margin: 0 -10px;
 }
 
 .carouselslide {
-    margin: 0 10px; /* Espacio entre las imágenes */
-    border-radius: 10px; /* Bordes redondeados */
-    flex: 0 0 auto; /* Evita que las imágenes se estiren */
-
+    margin: 0 10px;
+    border-radius: 10px;
+    flex: 0 0 auto;
 }
 
 .carouselslide img {
-    width: 250px; /* Ancho de las imágenes */
+    width: 100%;
+    max-width: 250px;
     height: 200px;
-    border-radius: 30px; /* Bordes redondeados */
-    transition: transform 0.3s ease; /* Ajusta la velocidad y suavidad del zoom */
-
+    border-radius: 30px;
+    transition: transform 0.3s ease;
 }
 
 .carouselslide:hover img {
-    transform: scale(1.05); /* Aplica un zoom del 5% al pasar el mouse sobre la imagen */
+    transform: scale(1.05);
 }
 
-
-.prev {
-    right: 95%;
+.prev, .next {
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
-    background-color: #6495ED; /* Color azul claro */
+    background-color: #6495ED;
     border: none;
-    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 20px;
     cursor: pointer;
     font-size: 24px;
     padding: 10px;
     z-index: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    color: white; /* Color de texto */
-    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.prev {
+    left: 5%;
 }
 
 .next {
-    left: 95%;
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background-color: #6495ED; /* Color azul claro */
-    border: none;
-    border-radius: 20px; /* Bordes redondeados */
-    cursor: pointer;
-    font-size: 24px;
-    padding: 10px;
-    z-index: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    color: white; /* Color de texto */
-
+    right: 5%;
 }
 
-
-
-.carouselprev {
-    left: 0; /* Alinea a la izquierda */
-}
-
-.carouselnext {
-    right: 0; /* Alinea a la derecha */
-}
-
-
-
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------imagen y descripcion--------------------*/
-
-
-
-
+/* Imagen y descripción */
 .image-with-text {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
 }
 
 .image-with-text img {
-    border-radius: 20px; /* Bordes redondeados s*/
-    width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    margin-right: 10px; /* Margen a la derecha */
-    margin-left: 10%;
+    margin: 10px;
 }
 
-
 .text-container {
-    padding: 100px;
-    font-family: "ADLaM Display", sans-serif; /* Fuente ADLaM Display */
+    padding: 20px;
+    font-family: "ADLaM Display", sans-serif;
 }
 
 .titulo {
-    color: #6495ED; /* Color azul */
-    font-size: 54px; /* Tamaño del título */
-    margin-bottom: 10px; /* Espacio inferior */
-    margin-top: -100px; /* Espacio inferior */
-    margin-right: 10px; /* Margen a la derecha */
-    margin-left: -10%;
+    color: #6495ED;
+    font-size: 54px;
+    margin: 10px 0;
 }
 
 .texto {
-    color: #000000; /* Color azul */
-    font-size: 16px; /* Tamaño del texto */
-    margin: 0; /* Elimina el margen predeterminado */
-    margin-right: 10px; /* Margen a la derecha */
-    margin-left: -10%;
+    color: #000000;
+    font-size: 16px;
+    margin: 0 10px;
 }
 
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------imagen y descripcion--------------------*/
-/* Estilos generales para los contenedores de imagen con texto */
-/* Estilos generales para el cuerpo de la página */
-
-/* Estilos generales para el cuerpo de la página */
-
-/* Estilos para la sección informativa */
+/* Sección informativa */
 .info-section {
-    max-width: 1200px; /* Ancho máximo de la sección */
-    margin: 10%; /* Márgenes alrededor de la sección */
-    padding: 20px; /* Añade espacio interno alrededor del contenido de la sección */
-    background-color: #f0f9ff; /* Color de fondo de la sección */
-    box-shadow: 0 5px 20px rgba(0, 106, 255, 0.463); /* Sombra sutil para la sección */
-    margin-top: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f9ff;
+    box-shadow: 0 5px 20px rgba(0, 106, 255, 0.463);
+    margin-top: 100px;
 }
 
-/* Título de la sección informativa */
 .info-section-titulo {
-    color: #333; /* Color del texto del título */
-    font-size: 36px; /* Tamaño del título */
-    text-align: center; /* Centrar el título */
-    margin-bottom: 40px; /* Espacio inferior */
+    color: #333;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Estilos para el grid de elementos informativos */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    gap: 40px; /* Espacio entre los elementos */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    gap: 40px;
 }
 
-/* Estilos para cada elemento informativo */
 .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Margen inferior */
+    margin-bottom: 20px;
 }
 
 .info-item-image {
-    border-radius: 20px; /* Bordes redondeados */
-    width: 150px; /* Ajusta el tamaño de la imagen según sea necesario */
+    border-radius: 20px;
+    width: 150px;
     height: auto;
-    margin-right: 20px; /* Margen a la derecha */
+    margin-right: 20px;
 }
 
 .info-item-text {
-    max-width: 400px; /* Ancho máximo del contenedor de texto */
-    font-family: "ADLaM Display", sans-serif; /* Fuente ADLaM Display */
-    text-align: left; /* Alineación del texto a la izquierda */
+    max-width: 400px;
+    font-family: "ADLaM Display", sans-serif;
+    text-align: left;
 }
 
 .info-item-titulo {
-    color: #6495ED; /* Color azul */
-    font-size: 24px; /* Tamaño del título */
-    margin-bottom: 10px; /* Espacio inferior */
+    color: #6495ED;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-/* Estilos del texto descriptivo */
 .info-item-descripcion {
-    color: #000000; /* Color del texto */
-    font-size: 16px; /* Tamaño del texto */
-    margin: 0; /* Elimina el margen predeterminado */
+    color: #000000;
+    font-size: 16px;
+    margin: 0;
 }
 
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------FOOTER--------------------*/
-
+/* Footer */
 .footer {
-    background-color: #3b5998; /* Color azul más oscuro */
-    padding: 20px; /* Ajusta el espaciado interno según sea necesario */
-    text-align: center; /* Centra el contenido horizontalmente */
-    color: white; /* Color de texto blanco */
-    left: 0;
-    bottom: 0;
-    width: auto; /* Ocupa todo el ancho */
+    background-color: #3b5998;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
 }
 
 .social-icons {
-    display: inline-block; /* Alinea los elementos en línea */
-    margin-right: 20px; /* Espacio a la derecha */
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .social-icons img {
-    width: 40px; /* Ajusta el tamaño de las imágenes según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 40px;
+    height: auto;
 }
 
 .footer-links {
     display: flex;
-    flex-direction: column; /* Coloca los enlaces en columna */
+    flex-direction: column;
 }
 
 .footer-links a {
-    display: block; /* Coloca los enlaces en bloque */
-    text-decoration: none; /* Elimina el subrayado */
-    color: white; /* Color de texto blanco */
-    font-family: Arial, sans-serif; /* Fuente Arial */
-    margin-bottom: 10px; /* Espacio entre los enlaces */
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
 }
 
-
-
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------FORMULARIO--------------------*/
-
-
-
+/* Formulario */
 .formulario-container {
     display: flex;
     justify-content: center;
@@ -590,7 +459,8 @@ header {
 }
 
 .formulario-logo {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height: 350px;
     border-radius: 50%;
     border: 2px solid #6495ED;
@@ -628,58 +498,115 @@ header {
     background-color: #4d71b5;
 }
 
-
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------*/
-/*-----------------Fotos base de datos--------------------*/
-
-
+/* Ajustes en el contenedor de guarderías */
 .inicio-contenedor-guarderias {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 guarderías por fila */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin: 150px auto; /* Ajusta el margen superior e inferior para posicionar correctamente */
+    padding: 20px; /* Espaciado interno */
+    width: 70%; /* No ocupa toda la página */
+}
+
+.guarderia-contenedor {
     display: flex;
-    justify-content: space-around; /* Espacio alrededor de los elementos */
-    margin: 4%; /* Centrar el contenedor horizontalmente */
-    gap: 30px; /* Espacio entre las guarderías */
-    margin-top: 10px; /* Reducir margen superior si es necesario */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ajusta el ancho del contenedor */
 }
 
 .inicio-guarderia {
-    display: flex;
-    flex-direction: column; /* Alinea el contenido en columna */
-    align-items: center; /* Centra horizontalmente */
-    background-color: #ffffff; /* Fondo blanco para cada guardería */
-    border: 2px solid #6495ED; /* Bordes de color azul */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 20px;
-    width: 30%; /* Ancho de cada guardería */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease; /* Transición para el efecto de zoom */
-    margin-top: -10%;
-}
-
-.inicio-guarderia:hover {
-    transform: scale(1.05); /* Efecto de zoom */
+    width: 100%;
 }
 
 .inicio-imagen-guarderia {
-    max-width: 100%; /* Ancho máximo del 100% del contenedor */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 100%;
+    height: 200px; /* Ajusta la altura de las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra todo el área sin deformarse */
     border-radius: 10px; /* Bordes redondeados */
 }
 
-.inicio-nombre-guarderia {
-    font-family: Arial, sans-serif; /* Fuente Arial */
-    color: black; /* Color del texto */
-    margin-top: 10px; /* Margen superior */
-    font-size: 18px; /* Tamaño de la fuente */
+.info-guarderia {
+    text-align: center;
+    margin-top: 10px; /* Espacio superior para separar de la imagen */
+    width: 100%;
 }
 
+.inicio-nombre-guarderia, .inicio-direccion, .inicio-precio, .inicio-puntuacion {
+    font-family: Arial, sans-serif;
+    color: black;
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    margin: 5px 0;
+}
+
+.estrella {
+    color: gold;
+    font-size: 16px;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 1200px) {
+    .inicio-contenedor-guarderias {
+        grid-template-columns: repeat(3, 1fr); /* 3 guarderías por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .inicio-contenedor-guarderias {
+        grid-template-columns: repeat(2, 1fr); /* 2 guarderías por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio-contenedor-guarderias {
+        grid-template-columns: 1fr; /* 1 guardería por fila en pantallas muy pequeñas */
+    }
 
 
 
+    .button-header.blue, .button-header.transparent {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
+    .titulosazul {
+        font-size: 36px;
+    }
+
+    .destinos-populares, .destinos-espana {
+        font-size: 36px;
+        top: 70%;
+    }
+
+    .buscadorhorizontal-form {
+        flex-direction: column;
+        top: 70%;
+    }
+
+    .buscadorinput-container, .buscadorbutton {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .prev, .next {
+        top: 50%;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-logo {
+        max-width: 250px;
+    }
+
+    .inicio-contenedor-guarderias {
+        grid-template-columns: 1fr;
+    }
+}
