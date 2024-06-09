@@ -5,57 +5,55 @@ body, html {
 }
 
 .contenedor-principal {
-    max-width: 100%; /* Ajusta el ancho máximo */
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
 
 header {
     position: relative;
-    height: 55vh; /* Reduce la altura según sea necesario */
+    height: 55vh;
     width: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+/*para el estilo del video */
 .video-header {
     position: absolute;
-    top: 50%; /* Ajusta la posición vertical del video */
-    left: 50%; /* Centra horizontalmente el video */
-    width: 70%; /* Ajusta el ancho del video */
-    height: auto; /* Mantiene la proporción del video */
-    transform: translate(-50%, -60%); /* Ajusta la posición del video */
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: auto;
+    transform: translate(-50%, -60%);
     border-bottom: 3px solid #5986d9;
-    margin-top: 100px; /* Añade separación con el inicio de la página */
-    z-index: 1; /* Asegura que el video esté detrás */
+    margin-top: 100px;
+    z-index: 1;
 }
 
-/* Estilos de la imagen del logo */
+/* aqui va el logo */
 .logo {
     position: absolute;
-    top: 30%; /* Ajusta para centrar verticalmente */
-    left: 50%; /* Centra horizontalmente */
+    top: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    max-width: 50%; /* Ajusta el ancho máximo según sea necesario */
+    max-width: 50%;
 }
 
-/* Botones del header */
-/* Contenedor de botones centrado y alineado horizontalmente */
-/* Contenedor de botones centrado y alineado horizontalmente */
 .botones-container {
     position: absolute;
-    top: 60%; /* Ajusta la posición vertical según sea necesario */
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    gap: 20px; /* Espacio entre los botones */
-    z-index: 3; /* Asegura que los botones estén delante del video */
+    gap: 20px;
+    z-index: 3;
     justify-content: center;
 }
-/* Estilos de los enlaces con íconos */
+
+/* botones para el header */
 .enlace-header {
     font-family: "ADLaM Display";
     color: #1d4ca2;
@@ -63,35 +61,35 @@ header {
     font-size: 20px;
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el ícono y el texto */
+    gap: 10px;
     transition: color 0.3s;
 }
 
 .enlace-header img {
-    width: 40px; /* Ajusta el tamaño del ícono */
+    width: 40px;
     height: auto;
 }
 
 .enlace-header:hover {
-    color: #6495ED; /* Cambia el color del texto al pasar el ratón */
+    color: #6495ED;
 }
 
-
+/* saludando al usuario */
 .saludo-usuario {
-    font-size: 20px !important; /* Tamaño de fuente */
-    color: #557fd7 !important; /* Color del texto */
+    font-size: 20px !important;
+    color: #557fd7 !important;
     position: absolute;
-    top: -180px; /* Ajusta la posición vertical según sea necesario */
-    right: -150px; /* Ajusta la posición horizontal según sea necesario */
-    z-index: 3; /* Asegura que el saludo esté delante del video */
+    top: -180px;
+    right: -150px;
+    z-index: 3;
     font-family: "ADLaM Display";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
-    border: 2px solid #557fd7; /* Borde del texto */
-    padding: 10px; /* Espaciado interno */
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra del cuadro */
-    animation: pulsate 1.5s infinite; /* Animación de pulsación */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid #557fd7;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    animation: pulsate 1.5s infinite;
 }
 
 @keyframes pulsate {
@@ -106,12 +104,6 @@ header {
     }
 }
 
-
-
-
-
-
-/* Estilos de los botones */
 .button-header, .loginbotones {
     font-family: "ADLaM Display";
     border: 3px solid white;
@@ -121,7 +113,7 @@ header {
     padding: 15px 20px;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
-    z-index: 3; /* Asegura que los botones estén delante del video */
+    z-index: 3;
 }
 
 .button-header.blue, .loginbotones.logged-in {
@@ -135,18 +127,16 @@ header {
 }
 
 .button-header.transparent:hover, .loginbotones:hover {
-    background-color: white; /* Cambia el color de fondo al pasar el ratón */
-    color: black; /* Cambia el color del texto al pasar el ratón */
+    background-color: white;
+    color: black;
 }
 
 .button-header.blue:hover, .loginbotones:hover {
-    border: 3px solid #6495ED; /* Reborde blanco */
-    background-color: #6495ED; /* Cambia el color de fondo al pasar el ratón */
-    color: rgb(255, 255, 255); /* Cambia el color del texto al pasar el ratón */
+    border: 3px solid #6495ED;
+    background-color: #6495ED;
+    color: rgb(255, 255, 255);
 }
 
-
-/* Títulos */
 .titulosazul {
     font-family: "ADLaM Display";
     color: #6495ED;
@@ -174,7 +164,6 @@ header {
     top: 65%;
 }
 
-/* Buscador */
 .buscadorbody {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -184,7 +173,7 @@ header {
 
 .buscadorhorizontal-form {
     position: absolute;
-    top: 60%; /* Ajusta la posición vertical para mover el buscador más abajo */
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -197,7 +186,7 @@ header {
     border: 3px solid #6494ed5b;
     border-radius: 40px;
     box-shadow: 0px 0px 10px 0px rgba(0, 64, 255, 0.659);
-    z-index: 2; /* Asegura que el buscador esté por encima del video */
+    z-index: 2;
 }
 
 .buscadorinput-container {
@@ -238,24 +227,21 @@ header {
 
 .buscadorbutton {
     flex: 1;
-    padding: 15px 30px; /* Añade espacio interno alrededor del contenido del botón */
-    border: none; /* Elimina el borde predeterminado */
-    border-radius: 20px; /* Bordes redondeados */
-    background-color: #6495ED; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    font-size: 20px; /* Tamaño de fuente del botón */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #6495ED;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .buscadorbutton:hover {
-    background-color: #4878d4; /* Cambia el color de fondo al pasar el ratón sobre el botón */
-    border-color: #4878d4; /* Cambia el color del borde al pasar el ratón sobre el botón */
+    background-color: #4878d4;
+    border-color: #4878d4;
 }
 
-
-
-/* Destinos Populares */
 .populargaleria {
     display: flex;
     justify-content: center;
@@ -293,7 +279,6 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Carrusel */
 .carousel-container {
     width: 100%;
     overflow: hidden;
@@ -349,11 +334,10 @@ header {
     right: 5%;
 }
 
-/* Imagen y descripción */
 .image-with-text {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    flex-wrap: wrap;
 }
 
 .image-with-text img {
@@ -381,7 +365,6 @@ header {
     margin: 0 10px;
 }
 
-/* Sección informativa */
 .info-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -400,7 +383,7 @@ header {
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
 }
 
@@ -435,7 +418,6 @@ header {
     margin: 0;
 }
 
-/* Footer */
 .footer {
     background-color: #3b5998;
     padding: 20px;
@@ -467,7 +449,6 @@ header {
     margin-bottom: 10px;
 }
 
-/* Formulario */
 .formulario-container {
     display: flex;
     justify-content: center;
@@ -531,23 +512,22 @@ header {
     background-color: #4d71b5;
 }
 
-/* Ajustes en el contenedor de guarderías */
 .inicio-contenedor-guarderias {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 guarderías por fila */
-    gap: 20px; /* Espacio entre los elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    margin: 150px auto; /* Ajusta el margen superior e inferior para posicionar correctamente */
-    padding: 20px; /* Espaciado interno */
-    width: 70%; /* No ocupa toda la página */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin: 150px auto;
+    padding: 20px;
+    width: 70%;
 }
 
 .guarderia-contenedor {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
-    text-align: left; /* Alinea el texto a la izquierda */
-    width: 100%; /* Ajusta el ancho del contenedor */
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
 }
 
 .inicio-guarderia {
@@ -556,46 +536,44 @@ header {
 
 .inicio-imagen-guarderia {
     width: 100%;
-    height: 200px; /* Ajusta la altura de las imágenes */
-    object-fit: cover; /* Asegura que la imagen cubra todo el área sin deformarse */
-    border-radius: 10px; /* Bordes redondeados */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .info-guarderia {
-    text-align: left; /* Alinea el texto a la izquierda */
-    margin-top: 10px; /* Espacio superior para separar de la imagen */
+    text-align: left;
+    margin-top: 10px;
     width: 100%;
 }
 
 .inicio-nombre-guarderia, .inicio-direccion, .inicio-precio, .inicio-puntuacion {
     font-family: Arial, sans-serif;
     color: black;
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    font-size: 14px;
     margin: 5px 0;
 }
 
 .estrella {
     color: gold;
     font-size: 16px;
-    
 }
 
-/* Media queries para dispositivos móviles */
 @media (max-width: 1200px) {
     .inicio-contenedor-guarderias {
-        grid-template-columns: repeat(3, 1fr); /* 3 guarderías por fila en pantallas medianas */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .inicio-contenedor-guarderias {
-        grid-template-columns: repeat(2, 1fr); /* 2 guarderías por fila en pantallas pequeñas */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .inicio-contenedor-guarderias {
-        grid-template-columns: 1fr; /* 1 guardería por fila en pantallas muy pequeñas */
+        grid-template-columns: 1fr;
     }
 
     .button-header.blue, .button-header.transparent {
