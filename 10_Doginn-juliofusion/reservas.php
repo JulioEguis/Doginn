@@ -79,18 +79,11 @@ $result = $conexion->query($sql);
                 echo "<img src='" . htmlspecialchars($imagen_representativa['imagen_url']) . "' alt='Imagen de la guardería' class='imagen-representativa' data-guarderia-id='" . $id_guarderia . "'>";
             }
             echo "<h3 class='nombre-guarderia'>" . htmlspecialchars($row['nombre_guarderia']) . "</h3>";
-            echo "<p><svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-map-pin' width='30' height='20' viewBox='0 0 24 24' stroke-width='1.5' stroke='#FFC107' fill='none' stroke-linecap='round' stroke-linejoin='round'>
-                        <path stroke='none' d='M0 0h24v24H0z'/>
-                        <circle cx='12' cy='11' r='3' />
-                        <path d='M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1 -2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z' />
-                    </svg>" . htmlspecialchars($row['direccion']) . "</p>";
-            echo "<p><svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-phone-call' width='30' height='20' viewBox='0 0 24 24' stroke-width='1.5' stroke='#00abfb' fill='none' stroke-linecap='round' stroke-linejoin='round'>
-                      <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
-                      <path d='M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2' />
-                      <path d='M15 7a2 2 0 0 1 2 2' />
-                      <path d='M15 3a6 6 0 0 1 6 6' />
-                    </svg>" . htmlspecialchars($row['telefono']) . "</p>";
-            echo "<p><strong>Precio por noche: </strong> " . htmlspecialchars($row['precio_minimo']) . " €</p>";
+            echo "<p><img src='img/locationon.png' alt='Dirección' class='icon'>" . htmlspecialchars($row['direccion']) . "</p>";
+            echo "<p><img src='img/call24.png' alt='Teléfono' class='icon'>" . htmlspecialchars($row['telefono']) . "</p>";
+            echo "<p><img src='img/euro24.png' alt='Precio' class='icon'>" . htmlspecialchars($row['precio_minimo']) . " €</p>";
+            
+          
             $sql_imagenes_adicionales = "SELECT imagen_url FROM imagenes_guarderia WHERE id_guarderia = $id_guarderia LIMIT 1, 10";
             $result_imagenes_adicionales = $conexion->query($sql_imagenes_adicionales);
             if ($result_imagenes_adicionales->num_rows > 0) {

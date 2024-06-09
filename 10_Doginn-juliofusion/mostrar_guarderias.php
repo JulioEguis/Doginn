@@ -90,7 +90,7 @@ session_start();
 
 <!-- Guarderías mostradas tras usar el buscador -->
 <div class="container">
-    <h1 style="text-align: center; vertical-align: middle;">Resultados de Búsqueda</h1>
+    <h1 class="resultados-busqueda">Resultados de Búsqueda</h1>
     <?php
     // Verificar si hay un mensaje de error en la sesión
     if (!empty($_SESSION['message'])) {
@@ -118,13 +118,13 @@ session_start();
                 echo "<div class='guarderia'>";
                 echo "<div class='info' style='display: flex; align-items: center; justify-content: space-between;'>";
                 echo "<div class='image' style='flex: 1; text-align: left;'>";
-                echo "<img src='" . htmlspecialchars($guarderia['imagen_url']) . "' alt='Imagen de " . htmlspecialchars($guarderia['nombre_guarderia']) . "' style='width: 100px; height: 100px; object-fit: cover;'>";
+                echo "<img src='" . htmlspecialchars($guarderia['imagen_url']) . "' alt='Imagen de " . htmlspecialchars($guarderia['nombre_guarderia']) . "' class='imagen-guarderia'>";
                 echo "</div>";
                 echo "<div class='details' style='flex: 2; text-align: center;'>";
                 echo "<h2>" . htmlspecialchars($guarderia['nombre_guarderia']) . "</h2>";
-                echo "<p><strong>Dirección:</strong> " . htmlspecialchars($guarderia['direccion']) . "</p>";
-                echo "<p><strong>Teléfono:</strong> " . htmlspecialchars($guarderia['telefono']) . "</p>";
-                echo "<p><strong>Precio por noche:</strong> " . htmlspecialchars($guarderia['precio_noche']) . " €</p>";
+                echo "<p><img src='img/locationon.png' alt='Ubicación' class='icon'> " . htmlspecialchars($guarderia['direccion']) . "</p>";
+                echo "<p><img src='img/call24.png' alt='Teléfono' class='icon'> " . htmlspecialchars($guarderia['telefono']) . "</p>";
+                echo "<p><img src='img/euro24.png' alt='Precio' class='icon'> " . htmlspecialchars($guarderia['precio_noche']) . " €</p>";
                 echo "</div>";
                 echo "<div class='button' style='flex: 1; text-align: right;'>";
                 echo "<form class='reservar-form' action='reservar_guarderias_filtradas.php' method='POST' onsubmit='return validateDates();'>";
@@ -154,35 +154,22 @@ session_start();
 <br><br><br><br><br><br>
 
 <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="left">
-            <a href="index_main.php">Doginn & Company</a>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="social-icons">
+            <a href="https://www.instagram.com"><img src="img/RedesSociales/Instagram_logo_2016.svg.png" alt="Instagram"></a>
+            <a href="https://x.com/DoginnES"><img src="img/RedesSociales/twitter-x.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/profile.php?id=61560149064324"><img src="img/RedesSociales/2023_Facebook_icon.svg.png" alt="Facebook"></a>
         </div>
-        <div class="center">
-            <a href="mailto:info@miempresa.com">doginnenterprise@gmail.com</a>
-        </div>
-        <div class="right">
-            © Todos los derechos reservados 2024
+        <div class="footer-links">
+            <a href="reservas.php">Guarderías</a>
+            <a href="blog_index.php">Nosotros</a>
+            <a href="login.php">Inicio Sesión</a>
+            <a href="registro.php">Registrarse</a>
+            <a href="guarderia_registro.html">Pon tu Guardería</a>
         </div>
     </div>
 </footer>
-
-<style>
-    .reservar-button {
-        background-color: #5986d9;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    .reservar-button:hover {
-        background-color: #476bb5;
-    }
-</style>
 
 <script>
     function validateDates() {

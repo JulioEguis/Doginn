@@ -55,11 +55,10 @@ header {
     z-index: 3; /* Asegura que los botones estén delante del video */
     justify-content: center;
 }
-
 /* Estilos de los enlaces con íconos */
 .enlace-header {
     font-family: "ADLaM Display";
-    color: white;
+    color: #1d4ca2;
     text-decoration: none;
     font-size: 20px;
     display: flex;
@@ -69,13 +68,47 @@ header {
 }
 
 .enlace-header img {
-    width: 20px; /* Ajusta el tamaño del ícono */
+    width: 40px; /* Ajusta el tamaño del ícono */
     height: auto;
 }
 
 .enlace-header:hover {
     color: #6495ED; /* Cambia el color del texto al pasar el ratón */
 }
+
+
+.saludo-usuario {
+    font-size: 20px !important; /* Tamaño de fuente */
+    color: #557fd7 !important; /* Color del texto */
+    position: absolute;
+    top: -180px; /* Ajusta la posición vertical según sea necesario */
+    right: -150px; /* Ajusta la posición horizontal según sea necesario */
+    z-index: 3; /* Asegura que el saludo esté delante del video */
+    font-family: "ADLaM Display";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    border: 2px solid #557fd7; /* Borde del texto */
+    padding: 10px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra del cuadro */
+    animation: pulsate 1.5s infinite; /* Animación de pulsación */
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
 
 
 /* Estilos de los botones */
@@ -512,8 +545,8 @@ header {
 .guarderia-contenedor {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
     width: 100%; /* Ajusta el ancho del contenedor */
 }
 
@@ -529,7 +562,7 @@ header {
 }
 
 .info-guarderia {
-    text-align: center;
+    text-align: left; /* Alinea el texto a la izquierda */
     margin-top: 10px; /* Espacio superior para separar de la imagen */
     width: 100%;
 }
@@ -544,6 +577,7 @@ header {
 .estrella {
     color: gold;
     font-size: 16px;
+    
 }
 
 /* Media queries para dispositivos móviles */
@@ -563,8 +597,6 @@ header {
     .inicio-contenedor-guarderias {
         grid-template-columns: 1fr; /* 1 guardería por fila en pantallas muy pequeñas */
     }
-
-
 
     .button-header.blue, .button-header.transparent {
         left: 50%;

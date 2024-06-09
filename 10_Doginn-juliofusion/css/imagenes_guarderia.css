@@ -154,3 +154,10 @@ h2 {
         flex: 1 1 100%; /* 1 guardería por fila */
     }
 }
+
+.icon {
+    width: 25px; /* Ajusta el tamaño del ícono según sea necesario */
+    height: 25px; /* Ajusta el tamaño del ícono según sea necesario */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+    vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
+}
