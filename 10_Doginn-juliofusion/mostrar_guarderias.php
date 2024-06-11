@@ -21,7 +21,7 @@ session_start();
     <div class="container">
         <div class="logo">
             <a href="index_main.php">
-                <img src="img/Blog/logo_sf.png" alt="Logo de Mi Empresa" class="logo-img">
+                <img src="img/blog/logo_sf.png" alt="Logo" class="logo-img">
             </a>
         </div>
         <nav>

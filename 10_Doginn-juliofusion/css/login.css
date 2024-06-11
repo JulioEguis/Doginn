@@ -63,7 +63,7 @@ input[type="email"], input[type="password"] {
 
 /* Estilos para el botón de tipo "submit" */
 button[type="submit"] {
-    background-color: #344eac; /* Color de fondo del botón */
+    background-color: #1a1b1e; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     padding: 3px 8px; /* Reduce aún más el espacio interno alrededor del contenido del botón */
     border: none; /* Elimina el borde del botón */
