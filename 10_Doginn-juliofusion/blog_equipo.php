@@ -169,7 +169,7 @@
 
                             <div class="tm-comment tm-mb-45">
                                 <figure class="tm-comment-figure">
-                                    <img src="img/Blog/logo_sf.png" alt="Image" class="mb-2 rounded-circle img-thumbnail">
+                                    <img src="img/Blog/jose.jpg" alt="Image" class="mb-2 rounded-circle img-thumbnail">
                                     <figcaption class="tm-color-primary text-center" style="font-weight: bold;">Jose Diez</figcaption>
                                 </figure>
                                 <div>
