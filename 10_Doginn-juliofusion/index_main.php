@@ -201,43 +201,44 @@ $conexion->close();
 ?>
 </div>
 
-<!-- sección informativa -->
 <section class="info-section">
-<h1 class="info-section-titulo">Sección Informativa</h1>
-<div class="info-grid">
-<div class="info-item">
-<img src="img/Cuidadocompromiso/perroespalda.jpg" alt="descripción de la imagen" class="info-item-image">
-<div class="info-item-text">
-<h2 class="info-item-titulo">Cuidado</h2>
-<p class="info-item-descripcion">En doginn, nos preocupamos profundamente por la salud y 
-felicidad de los perros. creemos que cada perro merece jugar, alimentarse 
-bien y tener suficiente espacio para vivir cómodamente.</p>
-</div>
-</div>
-<div class="info-item">
-<img src="img/Cuidadocompromiso/perrojugando.jpg" alt="descripción de la imagen" class="info-item-image">
-<div class="info-item-text">
-<h2 class="info-item-titulo">Compromiso</h2>
-<p class="info-item-descripcion">Nuestros hoteles para perros cumplen con los más altos estándares de cuidado. 
-garantizamos que cada perro reciba atención personalizada, áreas de juego adecuadas y una dieta balanceada durante su estadía.</p>
-</div>
-</div>
-<div class="info-item">
-<img src="img/Cuidadocompromiso/descanso.jpg" alt="descripción de la imagen" class="info-item-image">
-<div class="info-item-text">
-<h2 class="info-item-titulo">Descanso</h2>
-<p class="info-item-descripcion">Verificamos que cada guardería ofrezca un espacio tranquilo y cómodo para descansar, con camas limpias y un ambiente relajante para asegurar el bienestar de los perros.</p>
-</div>
-</div>
-<div class="info-item">
-<img src="img/Cuidadocompromiso/alimentacion.jpg" alt="descripción de la imagen" class="info-item-image">
-<div class="info-item-text">
-<h2 class="info-item-titulo">Alimentación</h2>
-<p class="info-item-descripcion">Nuestras guarderías asociadas ofrecen una dieta balanceada y adaptada a las necesidades individuales de cada perro, asegurando su nutrición y bienestar durante toda su estadía.</p>
-</div>
-</div>
-</div>
+    <h1 class="info-section-titulo">Sección Informativa</h1>
+    <div class="info-grid">
+        <div class="info-item">
+            <img src="img/Cuidadocompromiso/perroespalda.jpg" alt="Descripción de la imagen" class="info-item-image">
+            <div class="info-item-text">
+                <h2 class="info-item-titulo">Cuidado</h2>
+                <p class="info-item-descripcion">En DoGinn, nos preocupamos profundamente por la salud y 
+                felicidad de los perros. Creemos que cada perro merece jugar, alimentarse 
+                bien y tener suficiente espacio para vivir cómodamente.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <img src="img/Cuidadocompromiso/perrojugando.jpg" alt="Descripción de la imagen" class="info-item-image">
+            <div class="info-item-text">
+                <h2 class="info-item-titulo">Compromiso</h2>
+                <p class="info-item-descripcion">Nuestros hoteles para perros cumplen con los más altos estándares de cuidado. 
+                Garantizamos que cada perro reciba atención personalizada, áreas de juego adecuadas y una dieta balanceada durante su estadía.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <img src="img/Cuidadocompromiso/alimentacion.jpg" alt="Descripción de la imagen" class="info-item-image">
+            <div class="info-item-text">
+                <h2 class="info-item-titulo">Alimentación</h2>
+                <p class="info-item-descripcion">Nuestras guarderías asociadas ofrecen una dieta balanceada y adaptada a las necesidades individuales de cada perro, asegurando su nutrición y bienestar durante toda su estadía.</p>
+            </div>
+        </div>
+        <div class="info-item">
+            <img src="img/Cuidadocompromiso/descanso.jpg" alt="Descripción de la imagen" class="info-item-image">
+            <div class="info-item-text">
+                <h2 class="info-item-titulo">Descanso</h2>
+                <p class="info-item-descripcion">Verificamos que cada guardería ofrezca un espacio tranquilo y cómodo para descansar, con camas limpias y un ambiente relajante para asegurar el bienestar de los perros.</p>
+            </div>
+        </div>
+    </div>
 </section>
+
+
 
 <footer class="footer">
 <!-- contenedor para los iconos de redes sociales -->

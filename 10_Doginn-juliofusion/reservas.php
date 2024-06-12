@@ -1,21 +1,20 @@
 <?php
-session_start(); // empezamos la sesion//////////////////////////
+session_start(); // Empezamos la sesión
 
-// checa si hay un usuario logueado o no
-$loggedIn = isset($_SESSION['usuario_id']); ////////////
+// Checa si hay un usuario logueado o no
+$loggedIn = isset($_SESSION['usuario_id']);
 
-// conexion a la base de datos
+// Conexión a la base de datos
 include 'includes/conexion.php';
 
-// consulta SQL para las guarderias,,,
+// Consulta SQL para las guarderías
 $sql = "
     SELECT g.*, MIN(cd.precio_noche) AS precio_minimo
     FROM guarderias g
     LEFT JOIN calendarios_disponibilidad cd ON g.id_guarderia = cd.id_guarderia
     GROUP BY g.id_guarderia
 ";
-$result = $conexion->query($sql); // ejecuta la consulta
-
+$result = $conexion->query($sql); // Ejecuta la consulta
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,10 +22,10 @@ $result = $conexion->query($sql); // ejecuta la consulta
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de Guarderías</title>
-    <link rel="stylesheet" href="css/imagenes_guarderia.css"> <!-- cssSSSSSSSS  -->
-    <link rel="stylesheet" href="css/header_mg.css"> <!-- cssSSSSSSS -->
-    <link rel="stylesheet" href="css/footer_mg.css"> <!-- css -->
-    <link rel="icon" href="img/faviusuario.png" type="image/x-icon"> <!-- iconoOOOO -->
+    <link rel="stylesheet" href="css/imagenes_guarderia.css">
+    <link rel="stylesheet" href="css/header_mg.css">
+    <link rel="stylesheet" href="css/footer_mg.css">
+    <link rel="icon" href="img/faviusuario.png" type="image/x-icon">
 </head>
 <body>
 <header>
@@ -60,8 +59,8 @@ $result = $conexion->query($sql); // ejecuta la consulta
 </header>
 <br><br><br><br><br><br>
 
-<h2>Nuestras guarderias</h2>
-<!-- modal para ver imagen grande -->
+<h2>Nuestras guarderías</h2>
+<!-- Modal para ver imagen grande -->
 <div id="modal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modal-img">
@@ -70,7 +69,7 @@ $result = $conexion->query($sql); // ejecuta la consulta
 <div class="contenedor-guarderias">
     <?php
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) { // loop para mostrar guarderias
+        while ($row = $result->fetch_assoc()) { // Loop para mostrar guarderías
             echo "<div class='guarderia'>";
             $id_guarderia = $row['id_guarderia'];
             $sql_imagen_representativa = "SELECT imagen_url FROM imagenes_guarderia WHERE id_guarderia = $id_guarderia LIMIT 1";
@@ -84,7 +83,7 @@ $result = $conexion->query($sql); // ejecuta la consulta
             echo "<p><img src='img/call24.png' alt='Teléfono' class='icon'>" . htmlspecialchars($row['telefono']) . "</p>";
             echo "<p><img src='img/euro24.png' alt='Precio' class='icon'>" . htmlspecialchars($row['precio_minimo']) . " €</p>";
             
-            // mas imagenes de la guarderia
+            // Más imágenes de la guardería
             $sql_imagenes_adicionales = "SELECT imagen_url FROM imagenes_guarderia WHERE id_guarderia = $id_guarderia LIMIT 1, 10";
             $result_imagenes_adicionales = $conexion->query($sql_imagenes_adicionales);
             if ($result_imagenes_adicionales->num_rows > 0) {
@@ -99,9 +98,9 @@ $result = $conexion->query($sql); // ejecuta la consulta
             echo "</div>";
         }
     } else {
-        echo "No se encontraron resultados."; // no hay nada :'(((((((((((((()))))))))))))
+        echo "No se encontraron resultados.";
     }
-    $conexion->close(); // adios db
+    $conexion->close();
     ?>
 </div>
 
@@ -109,23 +108,23 @@ $result = $conexion->query($sql); // ejecuta la consulta
     document.addEventListener('DOMContentLoaded', function() {
         const loggedIn = <?php echo json_encode($loggedIn); ?>;
         
-        // botones de "Más Imágenes"
+        // Botones de "Más Imágenes"
         const botonesMasImagenes = document.querySelectorAll('.btn-mas-imagenes');
         
-        // agregar evento a cada boton
+        // Agregar evento a cada botón
         botonesMasImagenes.forEach(boton => {
             boton.addEventListener('click', function() {
                 const guarderia = boton.parentElement;
                 const imagenesAdicionales = guarderia.querySelector('.imagenes-adicionales');
                 const mostrandoMasImagenes = imagenesAdicionales.style.display === 'block';
 
-                // ocultar todas las imagenes adicionales
+                // Ocultar todas las imágenes adicionales
                 document.querySelectorAll('.imagenes-adicionales').forEach(imagenes => {
                     imagenes.style.display = 'none';
                     imagenes.parentElement.classList.remove('expandido');
                 });
 
-                // cambiar texto del boton
+                // Cambiar texto del botón
                 document.querySelectorAll('.btn-mas-imagenes').forEach(btn => {
                     btn.textContent = 'Más Imágenes';
                 });
@@ -141,7 +140,7 @@ $result = $conexion->query($sql); // ejecuta la consulta
             });
         });
 
-        // botones para hacer reserva
+        // Botones para hacer reserva
         const botonesHacerReserva = document.querySelectorAll('.btn-hacer-reserva');
 
         botonesHacerReserva.forEach(boton => {
@@ -157,7 +156,7 @@ $result = $conexion->query($sql); // ejecuta la consulta
             });
         });
 
-        // modal para imagenes
+        // Modal para imágenes
         var modal = document.getElementById("modal");
         var img = document.querySelectorAll(".imagen-representativa, .imagenes-adicionales img");
         var modalImg = document.getElementById("modal-img");
@@ -172,8 +171,16 @@ $result = $conexion->query($sql); // ejecuta la consulta
         span.onclick = function() {
             modal.style.display = "none";
         }
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     });
 </script>
+
 <br>
 <!-- Botón volver final página -->
 <div class="volver-container">
@@ -216,16 +223,3 @@ $result = $conexion->query($sql); // ejecuta la consulta
         margin-top: 20px;
     }
 
-    .footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .center a {
-        color: #ff0000;
-    }
-</style>
-</body>
-</html>

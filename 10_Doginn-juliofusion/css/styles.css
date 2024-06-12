@@ -19,20 +19,20 @@ header {
     justify-content: center;
     align-items: center;
 }
-/*para el estilo del video */
+
+/* para el estilo del video */
 .video-header {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 70%;
-    height: auto;
-    transform: translate(-50%, -60%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
     border-bottom: 3px solid #5986d9;
-    margin-top: 100px;
     z-index: 1;
 }
 
-/* aqui va el logo */
 .logo {
     position: absolute;
     top: 30%;
@@ -77,16 +77,16 @@ header {
 /* saludando al usuario */
 .saludo-usuario {
     font-size: 20px !important;
-    color: #557fd7 !important;
+    color: #4a51b6 !important;
     position: absolute;
     top: -180px;
     right: -150px;
     z-index: 3;
     font-family: "ADLaM Display";
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    border: 2px solid #557fd7;
+    border: 2px solid #21a612;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(14, 184, 54, 0.7);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     animation: pulsate 1.5s infinite;
@@ -371,7 +371,7 @@ header {
     padding: 20px;
     background-color: #f0f9ff;
     box-shadow: 0 5px 20px rgba(0, 106, 255, 0.463);
-    margin-top: 100px;
+    text-align: center;
 }
 
 .info-section-titulo {
@@ -383,47 +383,66 @@ header {
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    justify-content: center;
 }
 
 .info-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    text-align: left;
 }
 
 .info-item-image {
     border-radius: 20px;
-    width: 150px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    margin-right: 20px;
 }
 
 .info-item-text {
-    max-width: 400px;
-    font-family: "ADLaM Display", sans-serif;
+    padding: 20px;
     text-align: left;
+    
 }
 
 .info-item-titulo {
-    color: #6495ED;
     font-size: 24px;
     margin-bottom: 10px;
+    color: #6495ED;
+    text-align: center;
 }
 
 .info-item-descripcion {
-    color: #000000;
     font-size: 16px;
+    color: #090000;
     margin: 0;
 }
 
+
+
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-----------------FOOTER--------------------*/
+
+/* Estilos para el footer */
 .footer {
     background-color: #3b5998;
     padding: 20px;
     text-align: center;
     color: white;
-    width: 100%;
 }
 
 .social-icons {
@@ -448,6 +467,7 @@ header {
     font-family: Arial, sans-serif;
     margin-bottom: 10px;
 }
+
 
 .formulario-container {
     display: flex;
