@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="css/bootstrap.min_blog.css" rel="stylesheet">
     <link href="css/template_blog.css" rel="stylesheet">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 <body>
