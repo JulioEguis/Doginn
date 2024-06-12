@@ -80,16 +80,15 @@ header {
     color: #4a51b6 !important;
     position: absolute;
     top: -180px;
-    right: -150px;
+    right: -320px;
     z-index: 3;
     font-family: "ADLaM Display";
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    border: 2px solid #21a612;
+    border: 3px solid #00b3ff;
     padding: 10px;
-    background-color: rgba(14, 184, 54, 0.7);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    animation: pulsate 1.5s infinite;
+
 }
 
 @keyframes pulsate {
