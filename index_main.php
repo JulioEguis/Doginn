@@ -168,7 +168,7 @@ LEFT JOIN calendarios_disponibilidad cd ON g.id_guarderia = cd.id_guarderia
 LEFT JOIN imagenes_guarderia ig ON g.id_guarderia = ig.id_guarderia
 GROUP BY g.id_guarderia
 ";
-$result = $conexion->query($sql);
+$result = $conn->query($sql);
 
 // verifica si hay resultados
 if ($result->num_rows > 0) {
@@ -197,7 +197,7 @@ echo "no se encontraron resultados.";
 }
 
 // cierra conexion
-$conexion->close();
+$conn->close();
 ?>
 </div>
 
