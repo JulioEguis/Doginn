@@ -35,9 +35,9 @@ if ($checkIn && $checkOut) {
 $query .= " GROUP BY g.id_guarderia, g.nombre_guarderia, g.direccion, g.telefono, ig.imagen_url";
 
 // Preparar la consulta SQL
-$stmt = $conexion->prepare($query);
+$stmt = $conn->prepare($query);
 if (!$stmt) {
-    die('Error de preparación de la consulta: ' . $conexion->error);
+    die('Error de preparación de la consulta: ' . $conn->error);
 }
 
 // Vincular parámetros según los casos

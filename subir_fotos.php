@@ -20,9 +20,9 @@ $guarderia_id = $_SESSION['id_guarderia'];
 
 // Obtener el nombre de la guardería desde la base de datos
 $query_nombre_guarderia = "SELECT nombre_guarderia FROM guarderias WHERE id_guarderia = ?";
-$stmt_nombre_guarderia = $conexion->prepare($query_nombre_guarderia);
+$stmt_nombre_guarderia = $conn->prepare($query_nombre_guarderia);
 if (!$stmt_nombre_guarderia) {
-    die("Error en la preparación de la consulta: " . $conexion->error);
+    die("Error en la preparación de la consulta: " . $conn->error);
 }
 $stmt_nombre_guarderia->bind_param("i", $guarderia_id);
 $stmt_nombre_guarderia->execute();
@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['imagen'])) {
         // Insertar la ruta completa de la imagen en la base de datos
         $imagen_url = $carpeta_destino . $nombre_imagen;  // Esto incluye la ruta completa
 
-        $stmt = $conexion->prepare("INSERT INTO imagenes_guarderia (id_guarderia, imagen_url, ruta_imagen) VALUES (?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO imagenes_guarderia (id_guarderia, imagen_url, ruta_imagen) VALUES (?, ?, ?)");
         if (!$stmt) {
-            die("Error en la preparación de la consulta: " . $conexion->error);
+            die("Error en la preparación de la consulta: " . $conn->error);
         }
         $stmt->bind_param("iss", $guarderia_id, $imagen_url, $ruta_servidor);
 
@@ -77,9 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar_imagen'])) {
 
     // Preparar la declaración SQL para eliminar la imagen de la base de datos
     $query_eliminar_imagen = "DELETE FROM imagenes_guarderia WHERE id = ?";
-    $stmt = $conexion->prepare($query_eliminar_imagen);
+    $stmt = $conn->prepare($query_eliminar_imagen);
     if (!$stmt) {
-        die("Error en la preparación de la consulta: " . $conexion->error);
+        die("Error en la preparación de la consulta: " . $conn->error);
     }
     $stmt->bind_param("i", $id_imagen);
 
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar_imagen'])) {
 
 // Consultar todas las imágenes de la guardería que ha iniciado sesión
 $query_consulta_imagenes = "SELECT imagen_url, id FROM imagenes_guarderia WHERE id_guarderia = $guarderia_id";
-$resultado_imagenes = $conexion->query($query_consulta_imagenes);
+$resultado_imagenes = $conn->query($query_consulta_imagenes);
 ?>
 
 <!DOCTYPE html>

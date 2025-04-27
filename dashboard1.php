@@ -17,7 +17,7 @@ $guarderia_id = $_SESSION['id_guarderia'];
 
 // Obtener información específica de la guardería desde la base de datos
 $sql = "SELECT nombre_guarderia FROM guarderias WHERE id_guarderia = $guarderia_id";
-$resultado = $conexion->query($sql);
+$resultado = $conn->query($sql);
 
 if ($resultado->num_rows > 0) {
     $fila = $resultado->fetch_assoc();
@@ -25,7 +25,7 @@ if ($resultado->num_rows > 0) {
 }
 
 // Cerrar la conexión a la base de datos
-$conexion->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

@@ -16,18 +16,18 @@ if (isset($_POST['cancelar'])) {
     $database = "doginn"; // Nombre de la base de datos a la que nos conectaremos
 
     // Creamos una instancia de la clase mysqli para establecer la conexión
-    $conexion = new mysqli($servername, $usuario, $password, $database);
+    $conn = new mysqli($servername, $usuario, $password, $database);
 
     // Verificamos si la conexión fue exitosa
-    if ($conexion->connect_error) {
+    if ($conn->connect_error) {
         // Si hay un error en la conexión, mostramos un mensaje y terminamos la ejecución del script
-        die("Error al conectar la base de datos de la página: " . $conexion->connect_error);
+        die("Error al conectar la base de datos de la página: " . $conn->connect_error);
     }
 
     // Eliminamos el registro de la base de datos
     $sql = "DELETE FROM guarderias WHERE id = ?";
 
-    if ($stmt = $conexion->prepare($sql)) {
+    if ($stmt = $conn->prepare($sql)) {
         // Vinculamos variables a la declaración preparada como parámetros
         $stmt->bind_param("i", $param_id);
 
@@ -48,7 +48,7 @@ if (isset($_POST['cancelar'])) {
     $stmt->close();
 
     // Cerramos la conexión
-    $conexion->close();
+    $conn->close();
 }
 
 // Si se presiona el botón de aceptar

@@ -39,7 +39,7 @@ $query_verificar_usuario = "
 SELECT COUNT(*) as count FROM usuarios
 WHERE id = ? AND nombre = ? AND primer_apellido = ? AND segundo_apellido = ? AND email = ? AND telefono = ?
 ";
-$stmt_verificar = $conexion->prepare($query_verificar_usuario);
+$stmt_verificar = $conn->prepare($query_verificar_usuario);
 $stmt_verificar->bind_param("issssi", $id_usuario, $nombre_usuario, $primer_apellido, $segundo_apellido, $email_usuario, $telefono_usuario);
 $stmt_verificar->execute();
 $result_verificar = $stmt_verificar->get_result();
@@ -54,7 +54,7 @@ $query_perro = "
 INSERT INTO perros (id_usuario, nombre_perro, raza_perro, edad)
 VALUES (?, ?, ?, ?)
 ";
-$stmt_perro = $conexion->prepare($query_perro);
+$stmt_perro = $conn->prepare($query_perro);
 $stmt_perro->bind_param("isss", $id_usuario, $nombre_perro, $raza_perro, $edad);
 $stmt_perro->execute();
 
@@ -66,7 +66,7 @@ $query_reserva = "
 INSERT INTO reservas (id_usuario, id_perro, nombre_guarderia, fecha_inicio, fecha_fin, raza_perro, nombre_perro, id_guarderia)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 ";
-$stmt_reserva = $conexion->prepare($query_reserva);
+$stmt_reserva = $conn->prepare($query_reserva);
 $stmt_reserva->bind_param("iisssssi", $id_usuario, $id_perro, $nombre_guarderia, $checkIn, $checkOut, $raza_perro, $nombre_perro, $id_guarderia);
 $stmt_reserva->execute();
 
@@ -87,5 +87,5 @@ if ($id_reserva) {
 $stmt_reserva->close();
 $stmt_perro->close();
 $stmt_verificar->close();
-$conexion->close();
+$conn->close();
 ?>

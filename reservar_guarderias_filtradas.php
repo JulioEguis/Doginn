@@ -22,7 +22,7 @@ $_SESSION['nombre_guarderia'] = $nombre_guarderia;
 
 // Consulta para obtener el precio por noche
 $query_precio = "SELECT precio_noche FROM calendarios_disponibilidad WHERE id_guarderia = ? LIMIT 1";
-$stmt_precio = $conexion->prepare($query_precio);
+$stmt_precio = $conn->prepare($query_precio);
 $stmt_precio->bind_param("i", $id_guarderia);
 $stmt_precio->execute();
 $resultado_precio = $stmt_precio->get_result();

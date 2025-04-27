@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Eliminar todas las fechas actuales de la guardería
         $query_delete_all = "DELETE FROM calendarios_disponibilidad WHERE id_guarderia = ?";
-        $stmt_delete_all = $conexion->prepare($query_delete_all);
+        $stmt_delete_all = $conn->prepare($query_delete_all);
         $stmt_delete_all->bind_param("i", $id_guarderia);
         if ($stmt_delete_all->execute()) {
             error_log("Fechas actuales eliminadas para la guardería ID: " . $id_guarderia);
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Preparar la consulta para insertar disponibilidad con precio
         $query_insert = "INSERT INTO calendarios_disponibilidad (id_guarderia, fecha, precio_noche) VALUES (?, ?, ?)";
-        $stmt_insert = $conexion->prepare($query_insert);
+        $stmt_insert = $conn->prepare($query_insert);
 
         foreach ($fechas as $index => $fecha) {
             if ($disponibles[$index] === 'true') {
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert('Disponibilidad actualizada correctamente.');
                 window.location.href = 'publicar_disponibilidad.php';
               </script>";
-        $conexion->close();
+        $conn->close();
         exit();
     } else {
         error_log("Error: No se recibieron los datos esperados.");

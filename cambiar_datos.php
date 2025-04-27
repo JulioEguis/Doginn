@@ -23,17 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Actualizar datos en la base de datos
     $sql = "UPDATE guarderias SET nombre_guarderia = '$nombre_guarderia', direccion = '$direccion', telefono = '$telefono', correo_electronico = '$correo_electronico' WHERE id_guarderia = $id_guarderia";
 
-    if ($conexion->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE) {
       
     } else {
-        echo "Error al actualizar los datos: " . $conexion->error;
+        echo "Error al actualizar los datos: " . $conn->error;
     }
 }
 
 // Obtener los datos de la guardería actual
 $id_guarderia = $_SESSION['id_guarderia'];
 $sql = "SELECT * FROM guarderias WHERE id_guarderia = $id_guarderia";
-$resultado = $conexion->query($sql);
+$resultado = $conn->query($sql);
 
 if ($resultado->num_rows > 0) {
     $fila = $resultado->fetch_assoc();
@@ -45,7 +45,7 @@ if ($resultado->num_rows > 0) {
     die("No se encontró información de la guardería.");
 }
 
-$conexion->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

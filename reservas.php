@@ -73,7 +73,7 @@ $result = $conn->query($sql); // Ejecuta la consulta
             echo "<div class='guarderia'>";
             $id_guarderia = $row['id_guarderia'];
             $sql_imagen_representativa = "SELECT imagen_url FROM imagenes_guarderia WHERE id_guarderia = $id_guarderia LIMIT 1";
-            $result_imagen_representativa = $conexion->query($sql_imagen_representativa);
+            $result_imagen_representativa = $conn->query($sql_imagen_representativa);
             if ($result_imagen_representativa->num_rows > 0) {
                 $imagen_representativa = $result_imagen_representativa->fetch_assoc();
                 echo "<img src='" . htmlspecialchars($imagen_representativa['imagen_url']) . "' alt='Imagen de la guardería' class='imagen-representativa' data-guarderia-id='" . $id_guarderia . "'>";
@@ -85,7 +85,7 @@ $result = $conn->query($sql); // Ejecuta la consulta
             
             // Más imágenes de la guardería
             $sql_imagenes_adicionales = "SELECT imagen_url FROM imagenes_guarderia WHERE id_guarderia = $id_guarderia LIMIT 1, 10";
-            $result_imagenes_adicionales = $conexion->query($sql_imagenes_adicionales);
+            $result_imagenes_adicionales = $conn->query($sql_imagenes_adicionales);
             if ($result_imagenes_adicionales->num_rows > 0) {
                 echo "<div class='imagenes-adicionales' style='display: none;'>";
                 while ($imagen_adicional = $result_imagenes_adicionales->fetch_assoc()) {
@@ -100,7 +100,7 @@ $result = $conn->query($sql); // Ejecuta la consulta
     } else {
         echo "No se encontraron resultados.";
     }
-    $conexion->close();
+    $conn->close();
     ?>
 </div>
 

@@ -12,16 +12,16 @@ if(isset($_SESSION['id_guarderia']) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Actualizar los datos en la base de datos
     $sql = "UPDATE guarderias SET nombre = ?, direccion = ?, telefono = ? WHERE id = ?";
-    $stmt = $conexion->prepare($sql);
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssi", $nombre, $direccion, $telefono, $id_guarderia);
     $stmt->execute();
 
     if($stmt->affected_rows > 0){
         echo "Información de la guardería actualizada con éxito.";
     } else {
-        echo "Error al actualizar la información: " . $conexion->error;
+        echo "Error al actualizar la información: " . $conn->error;
     }
     $stmt->close();
 }
-$conexion->close();
+$conn->close();
 ?>

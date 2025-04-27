@@ -10,16 +10,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Insertar los datos en la base de datos
     $sql = "INSERT INTO guarderias (nombre_guarderia, direccion, telefono) VALUES (?, ?, ?)";
-    $stmt = $conexion->prepare($sql);
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $nombre, $direccion, $telefono);
     $stmt->execute();
 
     if($stmt->affected_rows > 0){
         echo "Guardería registrada con éxito.";
     } else {
-        echo "Error al registrar la guardería: " . $conexion->error;
+        echo "Error al registrar la guardería: " . $conn->error;
     }
     $stmt->close();
 }
-$conexion->close();
+$conn->close();
 ?>

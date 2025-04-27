@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Preparar y vincular los parámetros a la sentencia SQL
     $sql = "INSERT INTO guarderias (nombre_guarderia, direccion, telefono) VALUES (?, ?, ?)";
-    $stmt = $conexion->prepare($sql);
+    $stmt = $conn->prepare($sql);
     if (false === $stmt) {
-        die('Error de preparación: ' . htmlspecialchars($conexion->error));
+        die('Error de preparación: ' . htmlspecialchars($conn->error));
     }
     $stmt->bind_param('sss', $nombre, $direccion, $telefono);
 
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Cerrar sentencia y conexión
     $stmt->close();
-    $conexion->close();
+    $conn->close();
 } else {
     echo "Este script solo acepta solicitudes POST.";
 }

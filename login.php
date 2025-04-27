@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM doginn.usuarios WHERE email = '$email'";
 
     // Ejecuta la consulta
-    $result = mysqli_query($conexion, $query);
+    $result = mysqli_query($conn, $query);
 
     if ($result) {
         // Verifica si se encontró algún usuario con el correo proporcionado
@@ -43,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Error en la consulta
-        $mensaje = "Error en la consulta: " . mysqli_error($conexion);
+        $mensaje = "Error en la consulta: " . mysqli_error($conn);
     }
 
     // Cierra la conexión a la base de datos
-    mysqli_close($conexion);
+    mysqli_close($conn);
 }
 ?>
 

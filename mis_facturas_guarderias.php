@@ -19,7 +19,7 @@ $query_factura = "
     JOIN reservas r ON f.`id reserva` = r.id_reserva
     WHERE f.`id reserva` = ? AND r.id_guarderia = ?
 ";
-$stmt_factura = $conexion->prepare($query_factura);
+$stmt_factura = $conn->prepare($query_factura);
 $stmt_factura->bind_param("ii", $id_reserva, $id_guarderia);
 $stmt_factura->execute();
 $resultado_factura = $stmt_factura->get_result();
@@ -34,7 +34,7 @@ if (!$factura) {
 }
 
 $stmt_factura->close();
-$conexion->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

@@ -10,7 +10,7 @@ $telefono = "";
 $precio_noche = 0;
 
 $query_guarderia = "SELECT nombre_guarderia, direccion, telefono FROM guarderias WHERE id_guarderia = ?";
-$stmt_guarderia = $conexion->prepare($query_guarderia);
+$stmt_guarderia = $conn->prepare($query_guarderia);
 $stmt_guarderia->bind_param("i", $id_guarderia);
 $stmt_guarderia->execute();
 $resultado_guarderia = $stmt_guarderia->get_result();
@@ -22,7 +22,7 @@ if ($fila_guarderia = $resultado_guarderia->fetch_assoc()) {
 $stmt_guarderia->close();
 
 $query_precio = "SELECT MIN(precio_noche) AS precio_noche FROM calendarios_disponibilidad WHERE id_guarderia = ?";
-$stmt_precio = $conexion->prepare($query_precio);
+$stmt_precio = $conn->prepare($query_precio);
 $stmt_precio->bind_param("i", $id_guarderia);
 $stmt_precio->execute();
 $resultado_precio = $stmt_precio->get_result();
@@ -34,7 +34,7 @@ $stmt_precio->close();
 // Obtener las fechas disponibles
 $fechas_disponibles = [];
 $query = "SELECT fecha FROM calendarios_disponibilidad WHERE id_guarderia = ?";
-$stmt = $conexion->prepare($query);
+$stmt = $conn->prepare($query);
 $stmt->bind_param("i", $id_guarderia);
 $stmt->execute();
 $resultado = $stmt->get_result();

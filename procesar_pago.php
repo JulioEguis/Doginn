@@ -18,7 +18,7 @@ $query = "
     JOIN guarderias g ON r.id_guarderia = g.id_guarderia
     WHERE r.id_reserva = ?
 ";
-$stmt = $conexion->prepare($query);
+$stmt = $conn->prepare($query);
 $stmt->bind_param('i', $id_reserva);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
         INSERT INTO facturas (`id usuario`, `id reserva`, total, fecha, nombre_guarderia) 
         VALUES (?, ?, ?, NOW(), ?)
     ";
-    $insert_stmt = $conexion->prepare($insert_query);
+    $insert_stmt = $conn->prepare($insert_query);
     $insert_stmt->bind_param('iiis', $usuario_id, $id_reserva, $total, $nombre_guarderia);
 
     if ($insert_stmt->execute()) {
@@ -59,5 +59,5 @@ if ($result->num_rows > 0) {
 }
 
 $stmt->close();
-$conexion->close();
+$conn->close();
 ?>

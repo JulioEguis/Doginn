@@ -9,10 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reserva_id'])) {
 
     // Actualizar el estado de la reserva a "Rechazada" en la base de datos
     $query_rechazar_reserva = "UPDATE reservas SET estado = 'Rechazada' WHERE id = $reserva_id";
-    if ($conexion->query($query_rechazar_reserva) === TRUE) {
+    if ($conn->query($query_rechazar_reserva) === TRUE) {
         echo "La reserva ha sido rechazada exitosamente.";
     } else {
-        echo "Error al rechazar la reserva: " . $conexion->error;
+        echo "Error al rechazar la reserva: " . $conn->error;
     }
 }
 

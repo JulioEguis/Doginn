@@ -7,7 +7,7 @@ include('includes/conexion.php');
 $guarderia_id = $_SESSION['id_guarderia'];
 
 $query_nombre_guarderia = "SELECT nombre_guarderia FROM guarderias WHERE id_guarderia = ?";
-$stmt = $conexion->prepare($query_nombre_guarderia);
+$stmt = $conn->prepare($query_nombre_guarderia);
 $stmt->bind_param("i", $guarderia_id);
 $stmt->execute();
 $stmt->bind_result($nombre_guarderia);

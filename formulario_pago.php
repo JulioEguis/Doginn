@@ -20,7 +20,7 @@ $query = "
     JOIN guarderias g ON r.id_guarderia = g.id_guarderia
     WHERE r.id_reserva = ?
 ";
-$stmt = $conexion->prepare($query);
+$stmt = $conn->prepare($query);
 $stmt->bind_param('i', $id_reserva);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
 }
 
 $stmt->close();
-$conexion->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

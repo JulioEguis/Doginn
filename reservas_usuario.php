@@ -17,7 +17,7 @@ $reservas = [];
 $query = "SELECT r.fecha_inicio, r.fecha_fin, r.raza_perro, r.nombre_guarderia
           FROM reservas r 
           WHERE r.id_usuario = ?";
-$stmt = $conexion->prepare($query);
+$stmt = $conn->prepare($query);
 if ($stmt) {
     $stmt->bind_param("i", $id_usuario);
     $stmt->execute();
@@ -28,12 +28,12 @@ if ($stmt) {
     $stmt->close();
 } else {
     // Error en la preparación de la consulta
-    error_log("Error en la preparación de la consulta: " . $conexion->error);
+    error_log("Error en la preparación de la consulta: " . $conn->error);
     echo "Error en la preparación de la consulta.";
     exit();
 }
 
-$conexion->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

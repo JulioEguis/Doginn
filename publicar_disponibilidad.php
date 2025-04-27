@@ -15,7 +15,7 @@ $guarderia_id = $_SESSION['id_guarderia']; // Obtener el ID de la guardería de 
 // Recuperar las fechas disponibles desde la base de datos
 $fechas_disponibles = [];
 $query_fechas = "SELECT fecha FROM calendarios_disponibilidad WHERE id_guarderia = ?";
-$stmt_fechas = $conexion->prepare($query_fechas);
+$stmt_fechas = $conn->prepare($query_fechas);
 $stmt_fechas->bind_param("i", $guarderia_id);
 $stmt_fechas->execute();
 $result_fechas = $stmt_fechas->get_result();

@@ -21,14 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Verificamos si el email ya existe en la base de datos
         $consulta_email_existente = "SELECT * FROM doginn.usuarios WHERE email = '$email'";
-        $resultado_email_existente = mysqli_query($conexion, $consulta_email_existente);
+        $resultado_email_existente = mysqli_query($conn, $consulta_email_existente);
 
         if (mysqli_num_rows($resultado_email_existente) > 0) {
             echo "<script>alert('Este email ya existe. Introduce uno nuevo.'); window.history.back();</script>";
         } else {
             // Verificamos si el teléfono ya existe en la base de datos
             $consulta_telefono_existente = "SELECT * FROM doginn.usuarios WHERE telefono = '$telefono'";
-            $resultado_telefono_existente = mysqli_query($conexion, $consulta_telefono_existente);
+            $resultado_telefono_existente = mysqli_query($conn, $consulta_telefono_existente);
 
             if (mysqli_num_rows($resultado_telefono_existente) > 0) {
                 echo "<script>alert('Este teléfono ya existe. Introduce otro.'); window.history.back();</script>";
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Consulta SQL para insertar el nuevo usuario en la base de datos
                 $query = "INSERT INTO doginn.usuarios (nombre, primer_apellido, segundo_apellido, telefono, email, password) VALUES ('$nombre', '$primer_apellido', '$segundo_apellido', '$telefono', '$email', '$contrasena_hasheada')";
 
-                $result = mysqli_query($conexion, $query);
+                $result = mysqli_query($conn, $query);
 
                 if ($result) {
                     echo "<script>
@@ -47,13 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             window.location.href = 'login.php';
                           </script>";
                 } else {
-                    echo "<script>alert('Error en la consulta: " . mysqli_error($conexion) . "'); window.history.back();</script>";
+                    echo "<script>alert('Error en la consulta: " . mysqli_error($conn) . "'); window.history.back();</script>";
                 }
             }
         }
     }
 
     // Cerramos la conexión a la base de datos
-    mysqli_close($conexion);
+    mysqli_close($conn);
 }
 ?>

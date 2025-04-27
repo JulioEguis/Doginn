@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Consultar la base de datos para verificar las credenciales
     $query = "SELECT id_guarderia, password FROM guarderias WHERE correo_electronico = ?";
-    $stmt = $conexion->prepare($query);
+    $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $correo_electronico);
     $stmt->execute();
     $stmt->store_result();
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Cerrar la conexión a la base de datos
-$conexion->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

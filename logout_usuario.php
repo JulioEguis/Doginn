@@ -7,7 +7,7 @@ include('includes/conexion.php');
 $usuario_id = $_SESSION['usuario_id'];
 
 $query_nombre_usuario = "SELECT nombre FROM usuarios WHERE id = ?";
-$stmt = $conexion->prepare($query_nombre_usuario);
+$stmt = $conn->prepare($query_nombre_usuario);
 $stmt->bind_param("i", $usuario_id);
 $stmt->execute();
 $stmt->bind_result($nombre_usuario);

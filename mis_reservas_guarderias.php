@@ -20,7 +20,7 @@ $query_reservas = "
     JOIN usuarios ON reservas.id_usuario = usuarios.id 
     WHERE reservas.id_guarderia = ?
 ";
-$stmt_reservas = $conexion->prepare($query_reservas);
+$stmt_reservas = $conn->prepare($query_reservas);
 $stmt_reservas->bind_param("i", $id_guarderia);
 $stmt_reservas->execute();
 $resultado_reservas = $stmt_reservas->get_result();

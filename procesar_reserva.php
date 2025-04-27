@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($fecha_inicio && $fecha_fin && $nombre_perro && $raza_perro && $edad_perro && $nombre_usuario && $primer_apellido && $segundo_apellido && $email_usuario && $telefono_usuario && $id_guarderia) {
         // Consulta para obtener el ID del usuario basado en el correo electrónico
         $query_usuario = "SELECT * FROM usuarios WHERE email = ?";
-        $stmt_usuario = $conexion->prepare($query_usuario);
+        $stmt_usuario = $conn->prepare($query_usuario);
         $stmt_usuario->bind_param("s", $email_usuario);
         $stmt_usuario->execute();
         $resultado_usuario = $stmt_usuario->get_result();
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Insertar un nuevo perro con los datos proporcionados
                 $query_insertar_perro = "INSERT INTO perros (id_usuario, nombre_perro, raza_perro, edad) VALUES (?, ?, ?, ?)";
-                $stmt_insertar_perro = $conexion->prepare($query_insertar_perro);
+                $stmt_insertar_perro = $conn->prepare($query_insertar_perro);
                 $stmt_insertar_perro->bind_param("issi", $id_usuario, $nombre_perro, $raza_perro, $edad_perro);
                 if ($stmt_insertar_perro->execute()) {
                     $id_perro = $stmt_insertar_perro->insert_id;
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Obtener el nombre de la guardería
                 $query_guarderia = "SELECT nombre_guarderia FROM guarderias WHERE id_guarderia = ?";
-                $stmt_guarderia = $conexion->prepare($query_guarderia);
+                $stmt_guarderia = $conn->prepare($query_guarderia);
                 $stmt_guarderia->bind_param("i", $id_guarderia);
                 $stmt_guarderia->execute();
                 $resultado_guarderia = $stmt_guarderia->get_result();
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Insertar la reserva
                 $query_reserva = "INSERT INTO reservas (id_usuario, id_perro, nombre_guarderia, fecha_inicio, fecha_fin, raza_perro, nombre_perro, id_guarderia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-                $stmt_reserva = $conexion->prepare($query_reserva);
+                $stmt_reserva = $conn->prepare($query_reserva);
                 $stmt_reserva->bind_param("iisssssi", $id_usuario, $id_perro, $nombre_guarderia, $fecha_inicio, $fecha_fin, $raza_perro, $nombre_perro, $id_guarderia);
 
                 if ($stmt_reserva->execute()) {
@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location.href = 'gestion_reserva.php';
               </script>";
     }
-    $conexion->close();
+    $conn->close();
 } else {
     error_log("Error: Método de solicitud no permitido.");
     echo "<script>
