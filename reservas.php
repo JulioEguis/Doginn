@@ -14,7 +14,7 @@ $sql = "
     LEFT JOIN calendarios_disponibilidad cd ON g.id_guarderia = cd.id_guarderia
     GROUP BY g.id_guarderia
 ";
-$result = $conexion->query($sql); // Ejecuta la consulta
+$result = $conn->query($sql); // Ejecuta la consulta
 ?>
 <!DOCTYPE html>
 <html lang="es">
