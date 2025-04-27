@@ -5,37 +5,37 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 1500px; /* Limitar el ancho del contenedor principal */
-    margin: 0 auto; /* Centrar el contenedor */
-    gap: 20px; /* Añadir un poco de espacio entre los elementos */
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 /* Estilo para el título de la página */
 h2 {
-    text-align: center; /* Centrar el texto */
-    color: #007bff; /* Color azul */
-    margin-bottom: 50px; /* Espacio inferior */
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 50px;
 }
 
 /* Estilos para cada guardería */
 .guarderia {
-    border: none; /* Eliminar el borde */
-    border-radius: 10px; /* Mantener los bordes redondeados */
+    border: none;
+    border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
-    flex: 1 1 calc(25% - 20px); /* Permitir que el ancho sea 25% menos el espacio del gap */
-    text-align: center; /* Centrar contenido */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Mantener la sombra */
-    position: relative; /* Mantener la posición relativa */
-    max-width: 300px; /* Ancho máximo para mantener la proporción */
+    flex: 1 1 calc(25% - 20px);
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 300px;
 }
 
 /* Estilos para la imagen representativa de la guardería */
 .imagen-representativa,
 .imagenes-adicionales img {
     width: 100%;
-    height: 200px; /* Ajustar la altura para mantener uniformidad */
-    object-fit: cover; /* Asegurar que la imagen cubra todo el contenedor */
+    height: 200px;
+    object-fit: cover;
     cursor: pointer;
     margin-bottom: 10px;
 }
@@ -44,35 +44,36 @@ h2 {
 .imagenes-adicionales {
     display: none;
     margin-top: 10px;
+    position: relative;
 }
 
 /* Estilos para el botón "Más Imágenes" */
 .btn-mas-imagenes {
     margin-top: 10px;
     cursor: pointer;
-    background-color: #007bff; /* Fondo azul */
-    color: #fff; /* Texto blanco */
+    background-color: #007bff;
+    color: #fff;
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Transición suave */
+    transition: background-color 0.3s ease;
 }
 
 .btn-mas-imagenes:hover {
-    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    background-color: #0056b3;
 }
 
 /* Estilos para el logo de Doginn */
 .logo-doginn {
     display: block;
-    margin: 0 auto 20px; /* Centrar y agregar espacio abajo */
-    width: 100px; /* Tamaño del logo */
+    margin: 0 auto 20px;
+    width: 100px;
 }
 
 .btn-cerrar-sesion {
     position: absolute;
     top: 20px;
-    right: 300px; /* Cambia 'right' a 'left' y ajusta la distancia desde el borde izquierdo */
+    right: 300px;
     padding: 10px 20px;
     background-color: #4c6fb1;
     color: white;
@@ -83,11 +84,11 @@ h2 {
     cursor: pointer;
 }
 
-/* Estilos para el modal */
+
 .modal {
     display: none; /* Ocultar el modal por defecto */
     position: fixed; /* Posición fija */
-    z-index: 1; /* Establecer la capa más arriba */
+    z-index: 1000; /* Establecer un índice Z alto para estar por encima de la barra de navegación */
     left: 0;
     top: 0;
     width: 100%;
@@ -95,7 +96,19 @@ h2 {
     background-color: rgba(0,0,0,0.9); /* Fondo oscuro */
 }
 
-/* Estilos para la imagen dentro del modal */
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: red; /* Color rojo para la "X" */
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente para mayor visibilidad */
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
 .modal-content {
     margin: auto;
     display: block;
@@ -104,53 +117,57 @@ h2 {
     max-height: 80%; /* Altura máxima */
 }
 
-/* Estilos para el botón de cierre del modal */
-.close {
-    color: #fff; /* Color del texto */
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 35px;
-    font-weight: bold;
+.modal .close:hover,
+.modal .close:focus {
+    color: darkred; /* Cambia a un color más oscuro al pasar el mouse */
+    text-decoration: none;
     cursor: pointer;
 }
+
 
 .btn-hacer-reserva {
     margin-top: 10px;
-    margin: 10px auto; /* Centrar horizontalmente */
+    margin: 10px auto;
     cursor: pointer;
-    background-color: #a665ba; /* Fondo azul */
-    color: #fff; /* Texto blanco */
+    background-color: #a665ba;
+    color: #fff;
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Transición suave */
+    transition: background-color 0.3s ease;
     display: block;
     text-align: center;
-    text-decoration: none; /* Quitar subrayado del enlace */
-    font-size: 11px; /* Tamaño de la fuente */
-    width: 90px; /* Ajustar el ancho del botón */
+    text-decoration: none;
+    font-size: 11px;
+    width: 90px;
 }
 
 .btn-hacer-reserva:hover {
-    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    background-color: #0056b3;
 }
 
 /* Media Queries para adaptabilidad */
 @media (max-width: 1200px) {
     .guarderia {
-        flex: 1 1 calc(33.333% - 20px); /* 3 guarderías por fila */
+        flex: 1 1 calc(33.333% - 20px);
     }
 }
 
 @media (max-width: 992px) {
     .guarderia {
-        flex: 1 1 calc(50% - 20px); /* 2 guarderías por fila */
+        flex: 1 1 calc(50% - 20px);
     }
 }
 
 @media (max-width: 768px) {
     .guarderia {
-        flex: 1 1 100%; /* 1 guardería por fila */
+        flex: 1 1 100%;
     }
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    vertical-align: middle;
 }

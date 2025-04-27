@@ -117,5 +117,108 @@ body {
 }
 
 .container {
-    margin-top: 40px; /* Asegura el mismo margen entre el buscador y los resultados */
+    margin-top: 150px; /* Asegura el mismo margen entre el buscador y los resultados */
+}
+
+
+    .reservar-button {
+        background-color: #5986d9;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .reservar-button:hover {
+        background-color: #476bb5;
+    }
+
+    .volver-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .volver-button {
+        background-color: #5986d9;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .volver-button:hover {
+        background-color: #4a76c4;
+    }
+
+ /* Footer styles */
+.footer {
+    background-color: #3b5998;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Asegura que el contenido esté centrado */
+    margin-left: -40px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Espacio entre los iconos sociales y los enlaces */
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Asegura que los enlaces estén centrados */
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+.resultados-busqueda {
+    margin-top: -100px; /* Ajusta este valor para mover el título más arriba */
+    text-align: center; /* Asegura que el título esté centrado */
+    vertical-align: middle;
+}
+
+.imagen-guarderia {
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    height: 200px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones */
+}
+
+.icon {
+    width: 30px; /* Ajusta el tamaño del ícono según sea necesario */
+    height: 30px; /* Ajusta el tamaño del ícono según sea necesario */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+    vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
 }

@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link href="css/bootstrap.min_blog.css" rel="stylesheet">
     <link href="css/template_blog.css" rel="stylesheet">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -18,7 +19,7 @@
             </button>
             <!-- Logo doginn esquina superior izda. -->
             <div class="tm-site-header">
-                <div class="mb-3 mx-auto tm-site-logo"><img src="img/blog/logo_sf.png" width="150" height="150"></i></div><br>           
+                <div class="mb-3 mx-auto tm-site-logo"><img src="img/logo-removebg-preview.png" width="150" height="150"></i></div><br>           
                 <h1 class="text-center">SOBRE NOSOTROS</h1>
             </div>
             <nav class="tm-nav" id="tm-nav">            
