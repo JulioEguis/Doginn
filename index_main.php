@@ -37,7 +37,7 @@ if ( isset( $_SESSION['usuario_nombre'] ) ) {
 <!-- argar otros css, muchos estilos -->
 <link rel="stylesheet" href="css/despegable.css">
 <link rel="stylesheet" href="css/titulo.css">
-<link rel="stylesheet" href="css/pontuguarde.css">
+
 <!-- conctar a google fonts, letras bonitas -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
