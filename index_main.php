@@ -78,10 +78,10 @@ tu navegador no soporta video.
     Guarderías
     </a>
 
- <!-- <a href="blog_index.php" class="enlace-header">
+    <span class="enlace-header">
 <img src="img/pets.png" alt="icono de nosotros">
 Nosotros
-</a> -->
+</span>
 
     <?php if (!$logged_in): ?>
     <a href="guarderia_registro.html" class="enlace-header">
