@@ -77,11 +77,11 @@ tu navegador no soporta video.
     <img src="img/homedog2.png" alt="icono de guarderias"> <!-- icono de guarderias -->
     Guarderías
     </a>
-<!-- enlace a nosotros -->
-<a href="blog_index.php" class="enlace-header">
-<img src="img/pets.png" alt="icono de nosotros"> <!-- icono de nosotros -->
+
+ <!-- <a href="blog_index.php" class="enlace-header">
+<img src="img/pets.png" alt="icono de nosotros">
 Nosotros
-</a>
+</a> -->
 
     <?php if (!$logged_in): ?>
     <a href="guarderia_registro.html" class="enlace-header">
@@ -254,7 +254,7 @@ $conn->close();
 <!-- contenedor para los enlaces del footer -->
 <div class="footer-links">
 <a href="reservas.php">Guarderías</a>
-<a href="blog_index.php">Nosotros</a>
+<!-- <a href="blog_index.php">Nosotros</a> -->
 <a href="login.php">Inicio sesión</a>
 <a href="registro.php">Registrarse</a>
 <a href="guarderia_registro.html">Pon tu guardería</a>
