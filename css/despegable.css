@@ -1,0 +1,60 @@
+/* Estilos para el contenedor principal */
+.contenedor-principal {
+    margin-right: 70px; /* Margen derecho */
+    margin-left: 70px; /* Margen izquierdo */
+    margin-top: 20px; /* Espaciado superior */
+    text-align: center; /* Centra el contenido del contenedor */
+}
+
+/* Estilos para el contenedor destacado */
+.destacado-container {
+    text-align: right; /* Alinea el contenido a la derecha */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.registro-guarderia {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f4f6f7;  /* Color de fondo */
+    color: #353434; /* Color del texto */
+    text-decoration: none; /* Eliminar subrayado */
+    border-radius: 2px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; 
+    margin-right: 50px; /* Margen derecho */
+    margin-left: 70px; /* Margen izquierdo */
+    margin-top: -10px;
+}
+
+.registro-guarderia:hover {
+    background-color: #b6b5b3; /* Cambiar color de fondo al pasar el mouse */
+}
+
+/* Estilos para el menú de navegación */
+nav {
+    text-align: right; /* Alinea el contenido a la derecha */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: block; /* Cambia la visualización de los elementos a bloque */
+    margin-bottom: 10px; /* Añade margen inferior para separar los elementos */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; /* Color del texto */
+    font-size: 18px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente */
+    transition: color 0.3s ease; /* Transición suave del color */
+    margin-right: 70px; /* Margen derecho */
+    margin-left: 70px; /* Margen izquierdo */
+}
+
+nav ul li a:hover {
+    color: #FFC107; /* Cambiar color al pasar el mouse */
+}

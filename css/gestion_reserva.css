@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 50px auto 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+}
+
+.logo {
+    width: 150px;
+}
+
+.btn-volver {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btn-volver:hover {
+    background-color: #0056b3;
+}
+.btn-container {
+    text-align: center;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    width: 100%;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.alert {
+    color: #d9534f;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.boton-enviar-reserva {
+    padding: 10px 20px;
+    background-color: #4c6fb1;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.boton-enviar-reserva:hover  {
+    background-color: #0056b3;
+}

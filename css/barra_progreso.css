@@ -1,0 +1,26 @@
+/* barra_progreso.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+input[type="range"].iajvcf8 {
+    width: 50%;
+    margin: 0 auto; /* Si deseas centrar la barra */
+    background-color: black;
+
+}
+
+.precioNoches {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
