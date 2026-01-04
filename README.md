@@ -51,7 +51,7 @@ Proyecto realizado en colaboración con:
 - Sergio
 - José
 - Julio Eguis 
-Todos aportamos en cada fase (backend, frontend y base de datos).
+- Todos aportamos en cada fase (backend, frontend y base de datos).
 
 ---
 
