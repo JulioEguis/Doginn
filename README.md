@@ -8,6 +8,21 @@ https://41259534.servicio-online.net/
 
 ---
 
+## Documentación
+
+Memoria del Trabajo de Fin de Grado (TFG):  
+[Ver documentación completa del proyecto (PDF)](https://drive.google.com/file/d/19z7pZW67fj1exL9xr1sJB7H2Q-v-rHBP/view)
+
+> Aclaración:
+> Este proyecto corresponde al Trabajo de Fin de Grado realizado en equipo durante el CFGS ASIR.
+> La memoria incluida refleja el trabajo académico original.
+> 
+> Tras finalizar el ciclo, he retomado el proyecto de forma individual con el objetivo de:
+> - Desplegarlo en un entorno real
+> - Mejorar y corregir código
+> - Ajustar diseño y comportamiento responsive
+> - Adaptarlo como proyecto demostrativo de mis conocimientos actuales
+
 ## Tecnologías utilizadas
 
 ### Backend
