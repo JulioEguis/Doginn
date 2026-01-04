@@ -73,11 +73,11 @@ El proyecto incluye la memoria del TFG en PDF, donde se explica:
 
 ---
 
-##Estado del proyecto
+## Estado del proyecto
 
 ✔ Proyecto finalizado  
 ✔ Funcional  
-✔ Enfocado a demostrar conocimientos adquiridos durante nuestros estudios en el grado superior de administración de sistemas (ASIR) en el Intituto Las Encinas (Villanueva de la cañada)
+✔ Enfocado a demostrar conocimientos adquiridos durante nuestros estudios en el grado superior de administración de sistemas (ASIR) en el Instituto Las Encinas (Villanueva de la Cañada)
 
 ---
 
